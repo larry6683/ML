@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Land Cover Classification and Prediction Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+    /* Navigation Menu Styles */
+    nav {
+      background: #333;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    nav a:hover {
+      background: #ddd;
+      color: black;
+    }
+    /* Tab Content Styles */
+    .tabcontent {
+      display: none;
+      padding: 20px;
+      margin: 20px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    /* Image container to center images */
+    .image-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Future Urban Prediction Using MODIS Dataset and Machine Learning in Python</h1>
+  </header>
+  
+  <!-- Navigation Menu -->
+  <nav>
+    <a onclick="showTab('introduction')">Introduction</a>
+    <a onclick="showTab('data-prep')">Data Prep/EDA</a>
+    <a onclick="showTab('pca')">PCA</a>
+    <a onclick="showTab('clustering')">Clustering</a>
+    <a onclick="showTab('arm')">ARM</a>
+    <a onclick="showTab('dt')">Decision Tree</a>
+    <a onclick="showTab('nb')">Naive Bayes</a>
+    <a onclick="showTab('svm')">SVM</a>
+    <a onclick="showTab('regression')">Regression</a>
+    <a onclick="showTab('conclusions')">Conclusions</a>
+  </nav>
+  
+  <!-- Introduction Tab -->
+  <div id="introduction" class="tabcontent">
+    <h2>Introduction</h2>
+    <p>
+        Urbanization is a defining phenomenon of the modern era, with cities expanding rapidly to accommodate growing populations and industrial demands. As urban areas continue to grow, they significantly reshape natural landscapes, impact the environment, and challenge sustainable development. Predicting how urbanization will evolve in the future is crucial for effective urban planning, resource management, and the mitigation of environmental impacts. This project focuses on using remote sensing data from the MODIS (Moderate Resolution Imaging Spectroradiometer) satellite, combined with machine learning techniques, to analyze urban growth patterns and predict future urban expansion trends.
+        The MODIS dataset offers a reliable source of geospatial data, with high temporal resolution and global coverage. This makes it an ideal choice for tracking urbanization trends over time and modeling future patterns. By leveraging machine learning algorithms in Python, this project aims to forecast urban growth based on historical data, enabling urban planners and policymakers to anticipate future challenges and strategize accordingly. Machine learning is particularly effective in this context due to its ability to handle large-scale datasets, identify complex patterns, and make accurate predictions.
+        Urbanization prediction is a highly relevant topic because it has direct implications for infrastructure development, environmental conservation, and the allocation of resources. For example, unchecked urban expansion can lead to deforestation, habitat destruction, and increased greenhouse gas emissions. On the other hand, accurate predictions can help policymakers design sustainable urban layouts, minimize environmental impacts, and improve the quality of life for urban residents. This research will contribute to the growing field of urban studies by exploring how advanced computational techniques can provide actionable insights into one of the most pressing global challenges.
+        Previous studies on urban prediction have often relied on traditional statistical models or low-resolution datasets, which limit their accuracy and scalability. Recent advancements in machine learning, including Random Forests, Support Vector Machines (SVM), and Deep Learning methods such as Convolutional Neural Networks (CNNs), offer powerful tools for urban prediction. By applying these methods to the MODIS dataset, this project seeks to improve the accuracy of predictions and provide a robust framework for analyzing urbanization dynamics. The ultimate goal is to enable decision-makers to plan for a sustainable urban future.
+        
+    </p>
+    <p>
+        <b>10 Brainstorming Questions</b>
+        <ol>
+            <li>How has urbanization evolved over the past two decades based on MODIS satellite data?</li>
+            <li>What are the most significant predictors of urban growth that can be derived from the MODIS dataset?</li>
+            <li>How can machine learning algorithms forecast urban expansion over the next decade?</li>
+            <li>Which areas are most likely to experience rapid urbanization in the near future?</li>
+            <li>How do different machine learning models (e.g., Random Forest, SVM, Neural Networks) perform in predicting future urbanization trends?</li>
+            <li>What are the environmental impacts of future urbanization, such as deforestation and loss of vegetation?</li>
+            <li>Can the models identify "hotspots" where urban growth is accelerating?</li>
+            <li>How can the results of urban prediction models be visualized effectively to assist policymakers?</li>
+            <li>What are the limitations of using the MODIS dataset for urban prediction, and how can they be addressed?</li>
+            <li>How can this prediction framework be adapted for other regions or global-scale analysis?</li>
+        </ol>
+    </p>
+    <div class="image-container">
+      <img src="example-image1.jpg" alt="Satellite Imagery">
+      <p>Figure 1: Satellite imagery view for illustration purposes.</p>
+    </div>
+  </div>
+  
+  <!-- Data Prep/EDA Tab -->
+  <div id="data-prep" class="tabcontent">
+    <h2>Data Prep/EDA</h2>
+    <p>
+      In this section, we detail how the data was gathered, cleaned, and explored. Data is sourced from various satellite databases and APIs to ensure a broad representation. The initial raw data is captured in its unprocessed state prior to cleaning.
+    </p>
+    <p>
+      After collecting the raw data, significant preprocessing and cleansing steps were implemented to prepare the dataset for further analysis. Visual examples of both the raw and cleaned data are provided.
+    </p>
+    <div class="image-container">
+      <img src="raw-data-example.jpg" alt="Raw Data Example">
+      <p>Figure: Raw Data Example</p>
+      <img src="cleaned-data-example.jpg" alt="Cleaned Data Example">
+      <p>Figure: Cleaned Data Example</p>
+    </div>
+    <p>
+      Links to data:
+      <ul>
+        <li><a href="raw-data-link.csv" target="_blank">Raw Data</a></li>
+        <li><a href="cleaned-data-link.csv" target="_blank">Cleaned Data</a></li>
+      </ul>
+    </p>
+  </div>
+  
+  <!-- PCA Tab -->
+  <div id="pca" class="tabcontent">
+    <h2>PCA (Principal Component Analysis)</h2>
+    <p>
+      <strong>Overview:</strong> PCA is a dimensionality reduction technique that simplifies the data by reducing the number of features while preserving the most relevant information. It will be used to analyze distinct features from the land cover dataset.
+    </p>
+    <p>
+      <strong>Data:</strong> The following image shows an example of the dataset specifically preprocessed for PCA:
+    </p>
+    <div class="image-container">
+      <img src="pca-data-example.jpg" alt="PCA Data Example">
+      <p>Figure: Prepared Data for PCA</p>
+    </div>
+    <p>
+      Links to PCA data: <a href="prepared-data.csv" target="_blank">Prepared Data</a>
+    </p>
+    <p>
+      <strong>Code:</strong> The PCA implementation code (written in Python using libraries such as NumPy and Scikit-learn) is available 
+      <a href="pca-code-link" target="_blank">here</a>.
+    </p>
+    <p>
+      <strong>Results:</strong> Visualizations and explanations of the PCA results will be presented here.
+    </p>
+  </div>
+  
+  <!-- Clustering Tab -->
+  <div id="clustering" class="tabcontent">
+    <h2>Clustering</h2>
+    <p>
+      <strong>Overview:</strong> Clustering is used to identify natural groupings within the data. It is particularly useful for segmenting land cover types into similar clusters.
+    </p>
+    <p>
+      <strong>Data:</strong> Visual examples of prepared clustering data are provided below:
+    </p>
+    <div class="image-container">
+      <img src="clustering-data-example.jpg" alt="Clustering Data Example">
+      <p>Figure: Prepared Data for Clustering</p>
+    </div>
+    <p>
+      Links to clustering data: <a href="clustering-prepared-data.csv" target="_blank">Prepared Data</a>
+    </p>
+    <p>
+      <strong>Code:</strong> Find the clustering algorithm code (Python with Scikit-learn) 
+      <a href="clustering-code-link" target="_blank">here</a>.
+    </p>
+    <p>
+      <strong>Results:</strong> The clustering results, including visualization of clusters, will be detailed here.
+    </p>
+  </div>
+  
+  <!-- ARM Tab -->
+  <div id="arm" class="tabcontent">
+    <h2>ARM (Association Rule Mining)</h2>
+    <p>
+      <strong>Overview:</strong> ARM is incorporated to unearth interesting relationships within the data. It is particularly effective in detecting hidden patterns in land cover changes.
+    </p>
+    <p>
+      <strong>Data:</strong> The following image demonstrates the dataset prepared for ARM:
+    </p>
+    <div class="image-container">
+      <img src="arm-data-example.jpg" alt="ARM Data Example">
+      <p>Figure: Prepared Data for ARM</p>
+    </div>
+    <p>
+      Links to ARM data: <a href="arm-prepared-data.csv" target="_blank">Prepared Data</a>
+    </p>
+    <p>
+      <strong>Code:</strong> The ARM code (using Python with the mlxtend library) is available 
+      <a href="arm-code-link" target="_blank">here</a>.
+    </p>
+    <p>
+      <strong>Results:</strong> Visualization and analysis of ARM outputs will be added here.
+    </p>
+  </div>
+  
+  <!-- Decision Tree Tab -->
+  <div id="dt" class="tabcontent">
+    <h2>Decision Tree</h2>
+    <p>
+      <strong>Overview:</strong> The Decision Tree model classifies land cover by creating a series of decision splits. This method is effective in capturing nonlinear relationships in the data.
+    </p>
+    <p>
+      <strong>Data:</strong> Sample data prepared especially for the Decision Tree analysis is shown below:
+    </p>
+    <div class="image-container">
+      <img src="dt-data-example.jpg" alt="Decision Tree Data Example">
+      <p>Figure: Data for Decision Tree</p>
+    </div>
+    <p>
+      Links to Decision Tree data: <a href="dt-prepared-data.csv" target="_blank">Prepared Data</a>
+    </p>
+    <p>
+      <strong>Code:</strong> Access the Decision Tree implementation code (written in Python using Scikit-learn) 
+      <a href="dt-code-link" target="_blank">here</a>.
+    </p>
+    <p>
+      <strong>Results:</strong> Analysis and visualization of the Decision Tree outcomes will appear here.
+    </p>
+  </div>
+  
+  <!-- Naive Bayes Tab -->
+  <div id="nb" class="tabcontent">
+    <h2>Naive Bayes</h2>
+    <p>
+      <strong>Overview:</strong> Naive Bayes is a simple yet effective probabilistic classifier which applies Bayes' Theorem. It is especially useful in high-dimensional classification tasks.
+    </p>
+    <p>
+      <strong>Data:</strong> The following shows the prepared dataset used for the Naive Bayes classifier:
+    </p>
+    <div class="image-container">
+      <img src="nb-data-example.jpg" alt="Naive Bayes Data Example">
+      <p>Figure: Prepared Data for Naive Bayes</p>
+    </div>
+    <p>
+      Links to Naive Bayes data: <a href="nb-prepared-data.csv" target="_blank">Prepared Data</a>
+    </p>
+    <p>
+      <strong>Code:</strong> The Naive Bayes implementation (using Python and Scikit-learn) is available 
+      <a href="nb-code-link" target="_blank">here</a>.
+    </p>
+    <p>
+      <strong>Results:</strong> Results and visualizations for Naive Bayes will be provided here.
+    </p>
+  </div>
+  
+  <!-- SVM Tab -->
+  <div id="svm" class="tabcontent">
+    <h2>SVM (Support Vector Machine)</h2>
+    <p>
+      <strong>Overview:</strong> SVM finds the optimal hyperplane to separate different classes and is very effective in high-dimensional space. It will be used for classifying various land cover types.
+    </p>
+    <p>
+      <strong>Data:</strong> The data snippet below has been processed for the SVM model:
+    </p>
+    <div class="image-container">
+      <img src="svm-data-example.jpg" alt="SVM Data Example">
+      <p>Figure: Prepared Data for SVM</p>
+    </div>
+    <p>
+      Links to SVM data: <a href="svm-prepared-data.csv" target="_blank">Prepared Data</a>
+    </p>
+    <p>
+      <strong>Code:</strong> The SVM code (implemented in Python with Scikit-learn) can be accessed 
+      <a href="svm-code-link" target="_blank">here</a>.
+    </p>
+    <p>
+      <strong>Results:</strong> The outcomes of the SVM classification, including performance metrics, will be presented here.
+    </p>
+  </div>
+  
+  <!-- Regression Tab -->
+  <div id="regression" class="tabcontent">
+    <h2>Regression</h2>
+    <p>
+      <strong>Overview:</strong> Regression techniques analyze relationships between variables to predict continuous outcomes. This section will detail how regression methods forecast land cover changes.
+    </p>
+    <p>
+      <strong>Data:</strong> The prepared dataset for regression is demonstrated in the figure below:
+    </p>
+    <div class="image-container">
+      <img src="regression-data-example.jpg" alt="Regression Data Example">
+      <p>Figure: Prepared Data for Regression</p>
+    </div>
+    <p>
+      Links to Regression data: <a href="regression-prepared-data.csv" target="_blank">Prepared Data</a>
+    </p>
+    <p>
+      <strong>Code:</strong> Access the regression model code (written in Python with Scikit-learn) 
+      <a href="regression-code-link" target="_blank">here</a>.
+    </p>
+    <p>
+      <strong>Results:</strong> The analysis and visualizations from regression will be discussed here.
+    </p>
+  </div>
+  
+  <!-- Conclusions Tab -->
+  <div id="conclusions" class="tabcontent">
+    <h2>Conclusions</h2>
+    <p>
+      In this project, we have explored various machine learning techniques for land cover classification and future prediction. The insights derived offer a comprehensive understanding of environmental changes and human impacts on land cover.
+    </p>
+    <p>
+      The analysis provides a robust narrative built on data exploration, diverse methodologies, and validated results.
+    </p>
+    <p>
+      [Add additional non-technical paragraphs as required to meet the 5+ paragraph minimum...]
+    </p>
+    <div class="image-container">
+      <img src="conclusions-image.jpg" alt="Conclusions Visualization">
+      <p>Figure: Summary of Findings</p>
+    </div>
+  </div>
+  
+  <!-- JavaScript to handle tab switching -->
+  <script>
+    function showTab(tabName) {
+      // Hide all tab content containers
+      var tabcontents = document.getElementsByClassName("tabcontent");
+      for (var i = 0; i < tabcontents.length; i++) {
+        tabcontents[i].style.display = "none";
+      }
+      // Show the selected tab
+      document.getElementById(tabName).style.display = "block";
+    }
+    
+    // Display the Introduction tab by default when the page loads
+    window.onload = function() {
+      showTab('introduction');
+    };
+  </script>
+</body>
+</html>
