@@ -18,7 +18,6 @@
       padding: 10px 0;
       text-align: center;
     }
-    /* Navigation Menu Styles */
     nav {
       background: #333;
       overflow: hidden;
@@ -36,7 +35,6 @@
       background: #ddd;
       color: black;
     }
-    /* Tab Content Styles */
     .tabcontent {
       display: none;
       padding: 20px;
@@ -45,15 +43,19 @@
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    /* Image container to center images */
     .image-container {
       text-align: center;
       margin: 20px 0;
     }
     img {
-      max-width: 100%;
-      height: auto;
-    }
+    max-width: 500px; /* Set maximum width to 256px */
+    max-height: auto; /* Set maximum height to 256px */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid #ddd; /* Optional: Add a border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+  }
   </style>
 </head>
 <body>
@@ -61,7 +63,6 @@
     <h1>Future Urban Prediction Using MODIS Dataset and Machine Learning in Python</h1>
   </header>
   
-  <!-- Navigation Menu -->
   <nav>
     <a onclick="showTab('introduction')">Introduction</a>
     <a onclick="showTab('data-prep')">Data Prep/EDA</a>
@@ -79,263 +80,124 @@
   <div id="introduction" class="tabcontent">
     <h2>Introduction</h2>
     <p>
-        Urbanization is a defining phenomenon of the modern era, with cities expanding rapidly to accommodate growing populations and industrial demands. As urban areas continue to grow, they significantly reshape natural landscapes, impact the environment, and challenge sustainable development. Predicting how urbanization will evolve in the future is crucial for effective urban planning, resource management, and the mitigation of environmental impacts. This project focuses on using remote sensing data from the MODIS (Moderate Resolution Imaging Spectroradiometer) satellite, combined with machine learning techniques, to analyze urban growth patterns and predict future urban expansion trends.
-        The MODIS dataset offers a reliable source of geospatial data, with high temporal resolution and global coverage. This makes it an ideal choice for tracking urbanization trends over time and modeling future patterns. By leveraging machine learning algorithms in Python, this project aims to forecast urban growth based on historical data, enabling urban planners and policymakers to anticipate future challenges and strategize accordingly. Machine learning is particularly effective in this context due to its ability to handle large-scale datasets, identify complex patterns, and make accurate predictions.
-        Urbanization prediction is a highly relevant topic because it has direct implications for infrastructure development, environmental conservation, and the allocation of resources. For example, unchecked urban expansion can lead to deforestation, habitat destruction, and increased greenhouse gas emissions. On the other hand, accurate predictions can help policymakers design sustainable urban layouts, minimize environmental impacts, and improve the quality of life for urban residents. This research will contribute to the growing field of urban studies by exploring how advanced computational techniques can provide actionable insights into one of the most pressing global challenges.
-        Previous studies on urban prediction have often relied on traditional statistical models or low-resolution datasets, which limit their accuracy and scalability. Recent advancements in machine learning, including Random Forests, Support Vector Machines (SVM), and Deep Learning methods such as Convolutional Neural Networks (CNNs), offer powerful tools for urban prediction. By applying these methods to the MODIS dataset, this project seeks to improve the accuracy of predictions and provide a robust framework for analyzing urbanization dynamics. The ultimate goal is to enable decision-makers to plan for a sustainable urban future.
-        
+The Land-Use Scene Classification Dataset is a comprehensive collection of satellite imagery designed to facilitate the classification of land-use scenes. This dataset contains high-resolution images of various land-use categories, making it an essential resource for researchers and practitioners in the fields of remote sensing, urban planning, and environmental monitoring. The dataset is particularly valuable for training machine learning models to classify and analyze land-use patterns, which are critical for understanding urbanization, agricultural practices, and natural resource management.
+The dataset includes a diverse range of land-use categories, such as agricultural fields, forests, urban areas, water bodies, and barren lands. Each image is labeled with its corresponding land-use category, enabling supervised learning approaches. The high-quality imagery and well-structured annotations make this dataset suitable for a wide range of applications, including land-use change detection, urban growth prediction, and environmental impact assessment.
     </p>
+<p>
+Dataset source: https://www.kaggle.com/datasets/apollo2506/landuse-scene-classification
+ <!-- Visualization 10 -->
+    <div class="image-container">
+      <img src="images\10.png" alt="Scatter Plot of Relationships">
+      <p><strong></strong>Images from each class of the dataset.</p>
+    </div>
+
+</p>
     <p>
-        <b>10 Brainstorming Questions</b>
+        <b>10 Research Gaps/ Questions</b>
         <ol>
-            <li>How has urbanization evolved over the past two decades based on MODIS satellite data?</li>
-            <li>What are the most significant predictors of urban growth that can be derived from the MODIS dataset?</li>
-            <li>How can machine learning algorithms forecast urban expansion over the next decade?</li>
-            <li>Which areas are most likely to experience rapid urbanization in the near future?</li>
-            <li>How do different machine learning models (e.g., Random Forest, SVM, Neural Networks) perform in predicting future urbanization trends?</li>
-            <li>What are the environmental impacts of future urbanization, such as deforestation and loss of vegetation?</li>
-            <li>Can the models identify "hotspots" where urban growth is accelerating?</li>
-            <li>How can the results of urban prediction models be visualized effectively to assist policymakers?</li>
-            <li>What are the limitations of using the MODIS dataset for urban prediction, and how can they be addressed?</li>
-            <li>How can this prediction framework be adapted for other regions or global-scale analysis?</li>
-        </ol>
+           <li>Land Use Trends: How have land-use patterns changed over the last decade, and what are the primary causes of these shifts?
+<li>Classification Accuracy: Which machine learning methods (e.g., CNNs, Random Forests, or SVMs) are most accurate in identifying land-use scenes from this dataset?
+<li>Feature Importance: What are the most important aspects in satellite imagery that help with correct land-use classification?
+<li>Temporal Analysis: Can this dataset be coupled with temporal data to examine land-use trends across time?
+<li>Urbanisation Impact: How does urban expansion influence adjacent land-use categories, such as agricultural land and forests?
+<li>Model Generalisation: How well can models trained on this dataset apply to other locations or datasets with comparable land-use categories?
+<li>Environmental degradation: Can this dataset be used to identify?
+<li>Environmental deterioration: Can this dataset be used to identify areas of environmental deterioration, such as deforestation and soil erosion?
+<li>Multi-Class Imbalance: How can the dataset's class imbalance (e.g., fewer photos for specific categories) be addressed to improve model performance?
+<li>Integration with Other Data: How can this dataset be combined with other geographic datasets (such as climate or population density) to improve land-use predictions?
+
+
     </p>
-    <div class="image-container">
-      <img src="example-image1.jpg" alt="Satellite Imagery">
-      <p>Figure 1: Satellite imagery view for illustration purposes.</p>
-    </div>
-  </div>
-  
-  <!-- Data Prep/EDA Tab -->
+</div>
+
+<!-- Data Preparation/EDA -->
   <div id="data-prep" class="tabcontent">
-    <h2>Data Prep/EDA</h2>
+    <h3>Data Preparation/EDA</h3>
     <p>
-      In this section, we detail how the data was gathered, cleaned, and explored. Data is sourced from various satellite databases and APIs to ensure a broad representation. The initial raw data is captured in its unprocessed state prior to cleaning.
+      Exploratory Data Analysis (EDA) Description for the Land-Use Scene Classification Dataset
+Exploratory Data Analysis (EDA) is a critical step in understanding the structure, patterns, and relationships within the dataset 
+. For the Land-Use Scene Classification Dataset, EDA was conducted to uncover insights about the distribution of land-use categories, identify potential data quality issues, and prepare the dataset for machine learning models. The dataset contains high-resolution satellite images categorized into 12 distinct land-use classes, such as agricultural land, forests, urban areas, and water bodies. Below is a detailed description of the EDA process and findings.
     </p>
-    <p>
-      After collecting the raw data, significant preprocessing and cleansing steps were implemented to prepare the dataset for further analysis. Visual examples of both the raw and cleaned data are provided.
-    </p>
+    <h3>Visualizations</h3>
+
+    <!-- Visualization 1 -->
     <div class="image-container">
-      <img src="raw-data-example.jpg" alt="Raw Data Example">
-      <p>Figure: Raw Data Example</p>
-      <img src="cleaned-data-example.jpg" alt="Cleaned Data Example">
-      <p>Figure: Cleaned Data Example</p>
+      <p><strong>Figure 1:</strong> Initial Dataset scraped from Kaggle API using python.</p>
+      <img src="images\1.png" alt="Histogram of Numerical Features">
+
     </div>
-    <p>
-      Links to data:
-      <ul>
-        <li><a href="raw-data-link.csv" target="_blank">Raw Data</a></li>
-        <li><a href="cleaned-data-link.csv" target="_blank">Cleaned Data</a></li>
-      </ul>
-    </p>
-  </div>
-  
-  <!-- PCA Tab -->
-  <div id="pca" class="tabcontent">
-    <h2>PCA (Principal Component Analysis)</h2>
-    <p>
-      <strong>Overview:</strong> PCA is a dimensionality reduction technique that simplifies the data by reducing the number of features while preserving the most relevant information. It will be used to analyze distinct features from the land cover dataset.
-    </p>
-    <p>
-      <strong>Data:</strong> The following image shows an example of the dataset specifically preprocessed for PCA:
-    </p>
+
+    <!-- Visualization 2 -->
     <div class="image-container">
-      <img src="pca-data-example.jpg" alt="PCA Data Example">
-      <p>Figure: Prepared Data for PCA</p>
+      <p><strong>Figure 2:</strong> Dataset after cleaning process</p>
+      <img src="images\2.png" alt="Cleaned Dataset">
+
     </div>
-    <p>
-      Links to PCA data: <a href="prepared-data.csv" target="_blank">Prepared Data</a>
-    </p>
-    <p>
-      <strong>Code:</strong> The PCA implementation code (written in Python using libraries such as NumPy and Scikit-learn) is available 
-      <a href="pca-code-link" target="_blank">here</a>.
-    </p>
-    <p>
-      <strong>Results:</strong> Visualizations and explanations of the PCA results will be presented here.
-    </p>
-  </div>
-  
-  <!-- Clustering Tab -->
-  <div id="clustering" class="tabcontent">
-    <h2>Clustering</h2>
-    <p>
-      <strong>Overview:</strong> Clustering is used to identify natural groupings within the data. It is particularly useful for segmenting land cover types into similar clusters.
-    </p>
-    <p>
-      <strong>Data:</strong> Visual examples of prepared clustering data are provided below:
-    </p>
+
+    <!-- Visualization 3 -->
     <div class="image-container">
-      <img src="clustering-data-example.jpg" alt="Clustering Data Example">
-      <p>Figure: Prepared Data for Clustering</p>
+      <img src="images\3.png" alt="Missing Values Heatmap">
+      <p><strong>Figure 3:</strong> Few Images from the dataset.</p>
     </div>
-    <p>
-      Links to clustering data: <a href="clustering-prepared-data.csv" target="_blank">Prepared Data</a>
-    </p>
-    <p>
-      <strong>Code:</strong> Find the clustering algorithm code (Python with Scikit-learn) 
-      <a href="clustering-code-link" target="_blank">here</a>.
-    </p>
-    <p>
-      <strong>Results:</strong> The clustering results, including visualization of clusters, will be detailed here.
-    </p>
-  </div>
-  
-  <!-- ARM Tab -->
-  <div id="arm" class="tabcontent">
-    <h2>ARM (Association Rule Mining)</h2>
-    <p>
-      <strong>Overview:</strong> ARM is incorporated to unearth interesting relationships within the data. It is particularly effective in detecting hidden patterns in land cover changes.
-    </p>
-    <p>
-      <strong>Data:</strong> The following image demonstrates the dataset prepared for ARM:
-    </p>
+
+    <!-- Visualization 4 -->
     <div class="image-container">
-      <img src="arm-data-example.jpg" alt="ARM Data Example">
-      <p>Figure: Prepared Data for ARM</p>
+      <img src="images\4.png" alt="Boxplot for Outliers">
+      <p><strong>Figure 4:</strong> Class Distribution of Land Cover Images Dataset.</p>
     </div>
-    <p>
-      Links to ARM data: <a href="arm-prepared-data.csv" target="_blank">Prepared Data</a>
-    </p>
-    <p>
-      <strong>Code:</strong> The ARM code (using Python with the mlxtend library) is available 
-      <a href="arm-code-link" target="_blank">here</a>.
-    </p>
-    <p>
-      <strong>Results:</strong> Visualization and analysis of ARM outputs will be added here.
-    </p>
-  </div>
-  
-  <!-- Decision Tree Tab -->
-  <div id="dt" class="tabcontent">
-    <h2>Decision Tree</h2>
-    <p>
-      <strong>Overview:</strong> The Decision Tree model classifies land cover by creating a series of decision splits. This method is effective in capturing nonlinear relationships in the data.
-    </p>
-    <p>
-      <strong>Data:</strong> Sample data prepared especially for the Decision Tree analysis is shown below:
-    </p>
+
+    <!-- Visualization 5 -->
     <div class="image-container">
-      <img src="dt-data-example.jpg" alt="Decision Tree Data Example">
-      <p>Figure: Data for Decision Tree</p>
+      <img src="images\5.png" alt="Pairplot of Numerical Features">
+      <p><strong>Figure 5:</strong> Classes in the Dataset.</p>
     </div>
-    <p>
-      Links to Decision Tree data: <a href="dt-prepared-data.csv" target="_blank">Prepared Data</a>
-    </p>
-    <p>
-      <strong>Code:</strong> Access the Decision Tree implementation code (written in Python using Scikit-learn) 
-      <a href="dt-code-link" target="_blank">here</a>.
-    </p>
-    <p>
-      <strong>Results:</strong> Analysis and visualization of the Decision Tree outcomes will appear here.
-    </p>
-  </div>
-  
-  <!-- Naive Bayes Tab -->
-  <div id="nb" class="tabcontent">
-    <h2>Naive Bayes</h2>
-    <p>
-      <strong>Overview:</strong> Naive Bayes is a simple yet effective probabilistic classifier which applies Bayes' Theorem. It is especially useful in high-dimensional classification tasks.
-    </p>
-    <p>
-      <strong>Data:</strong> The following shows the prepared dataset used for the Naive Bayes classifier:
-    </p>
+
+    <!-- Visualization 6 -->
     <div class="image-container">
-      <img src="nb-data-example.jpg" alt="Naive Bayes Data Example">
-      <p>Figure: Prepared Data for Naive Bayes</p>
+      <img src="images\6.png" alt="Countplot of Categorical Features">
+      <p><strong>Figure 6:</strong> Aspect Ration Distribution of Images.</p>
     </div>
-    <p>
-      Links to Naive Bayes data: <a href="nb-prepared-data.csv" target="_blank">Prepared Data</a>
-    </p>
-    <p>
-      <strong>Code:</strong> The Naive Bayes implementation (using Python and Scikit-learn) is available 
-      <a href="nb-code-link" target="_blank">here</a>.
-    </p>
-    <p>
-      <strong>Results:</strong> Results and visualizations for Naive Bayes will be provided here.
-    </p>
-  </div>
-  
-  <!-- SVM Tab -->
-  <div id="svm" class="tabcontent">
-    <h2>SVM (Support Vector Machine)</h2>
-    <p>
-      <strong>Overview:</strong> SVM finds the optimal hyperplane to separate different classes and is very effective in high-dimensional space. It will be used for classifying various land cover types.
-    </p>
-    <p>
-      <strong>Data:</strong> The data snippet below has been processed for the SVM model:
-    </p>
+
+    <!-- Visualization 7 -->
     <div class="image-container">
-      <img src="svm-data-example.jpg" alt="SVM Data Example">
-      <p>Figure: Prepared Data for SVM</p>
+      <img src="images\7.png" alt="Pie Chart of Class Proportions">
+      <p><strong>Figure 7:</strong> Scatter plot of Image size distribution among the Dataset.</p>
     </div>
-    <p>
-      Links to SVM data: <a href="svm-prepared-data.csv" target="_blank">Prepared Data</a>
-    </p>
-    <p>
-      <strong>Code:</strong> The SVM code (implemented in Python with Scikit-learn) can be accessed 
-      <a href="svm-code-link" target="_blank">here</a>.
-    </p>
-    <p>
-      <strong>Results:</strong> The outcomes of the SVM classification, including performance metrics, will be presented here.
-    </p>
-  </div>
-  
-  <!-- Regression Tab -->
-  <div id="regression" class="tabcontent">
-    <h2>Regression</h2>
-    <p>
-      <strong>Overview:</strong> Regression techniques analyze relationships between variables to predict continuous outcomes. This section will detail how regression methods forecast land cover changes.
-    </p>
-    <p>
-      <strong>Data:</strong> The prepared dataset for regression is demonstrated in the figure below:
-    </p>
+
+    <!-- Visualization 8 -->
     <div class="image-container">
-      <img src="regression-data-example.jpg" alt="Regression Data Example">
-      <p>Figure: Prepared Data for Regression</p>
+      <img src="images\8.png" alt="KDE Plot of Numerical Features">
+      <p><strong>Figure 8:</strong> Average Image size per class.</p>
     </div>
-    <p>
-      Links to Regression data: <a href="regression-prepared-data.csv" target="_blank">Prepared Data</a>
-    </p>
-    <p>
-      <strong>Code:</strong> Access the regression model code (written in Python with Scikit-learn) 
-      <a href="regression-code-link" target="_blank">here</a>.
-    </p>
-    <p>
-      <strong>Results:</strong> The analysis and visualizations from regression will be discussed here.
-    </p>
-  </div>
-  
-  <!-- Conclusions Tab -->
-  <div id="conclusions" class="tabcontent">
-    <h2>Conclusions</h2>
-    <p>
-      In this project, we have explored various machine learning techniques for land cover classification and future prediction. The insights derived offer a comprehensive understanding of environmental changes and human impacts on land cover.
-    </p>
-    <p>
-      The analysis provides a robust narrative built on data exploration, diverse methodologies, and validated results.
-    </p>
-    <p>
-      [Add additional non-technical paragraphs as required to meet the 5+ paragraph minimum...]
-    </p>
+
+    <!-- Visualization 9 -->
     <div class="image-container">
-      <img src="conclusions-image.jpg" alt="Conclusions Visualization">
-      <p>Figure: Summary of Findings</p>
+      <img src="images\9.png" alt="Violin Plot of Class-Wise Distribution">
+      <p><strong>Figure 9:</strong>  Brightness distriubtion of IMages in Dataset.</p>
     </div>
+
+    <!-- Visualization 10 -->
+    <div class="image-container">
+      <img src="images\10.png" alt="Scatter Plot of Relationships">
+      <p><strong>Figure 10:</strong>Images from each class of the dataset.</p>
+    </div>
+
+<p><b>
+According to the analysis or EDA I observed that the dataset is now clean and all the 7530 images in the dataset are perfectly processed.
+</b></p>
+
   </div>
-  
+</div>
+
   <!-- JavaScript to handle tab switching -->
   <script>
     function showTab(tabName) {
-      // Hide all tab content containers
       var tabcontents = document.getElementsByClassName("tabcontent");
       for (var i = 0; i < tabcontents.length; i++) {
         tabcontents[i].style.display = "none";
       }
-      // Show the selected tab
       document.getElementById(tabName).style.display = "block";
     }
-    
-    // Display the Introduction tab by default when the page loads
     window.onload = function() {
       showTab('introduction');
     };
