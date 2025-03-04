@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Land Cover Classification and Prediction Project</title>
+  <title>Crop recommendation based on the soil and weather properties</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -60,7 +60,7 @@
 </head>
 <body>
   <header>
-    <h1>Future Urban Prediction Using MODIS Dataset and Machine Learning in Python</h1>
+    <h1>Crop recommendation based on the soil and weather properties</h1>
   </header>
   
   <nav>
@@ -69,42 +69,38 @@
     <a onclick="showTab('pca')">PCA</a>
     <a onclick="showTab('clustering')">Clustering</a>
     <a onclick="showTab('arm')">ARM</a>
-    <a onclick="showTab('dt')">Decision Tree</a>
-    <a onclick="showTab('nb')">Naive Bayes</a>
-    <a onclick="showTab('svm')">SVM</a>
-    <a onclick="showTab('regression')">Regression</a>
-    <a onclick="showTab('conclusions')">Conclusions</a>
   </nav>
   
   <!-- Introduction Tab -->
   <div id="introduction" class="tabcontent">
-    <h2>Introduction</h2>
+    <h3>Introduction</h3>
+    <a href="https://data.mendeley.com/datasets/8v757rr4st/1">Dataset source: https://data.mendeley.com/datasets/8v757rr4st/1</a></br>
+- Downloaded the dataset from the Elsevier's mendeley data repository through unofficial API available for fetching data related to crops.
     <p>
-The Land-Use Scene Classification Dataset is a comprehensive collection of satellite imagery designed to facilitate the classification of land-use scenes. This dataset contains high-resolution images of various land-use categories, making it an essential resource for researchers and practitioners in the fields of remote sensing, urban planning, and environmental monitoring. The dataset is particularly valuable for training machine learning models to classify and analyze land-use patterns, which are critical for understanding urbanization, agricultural practices, and natural resource management.
-The dataset includes a diverse range of land-use categories, such as agricultural fields, forests, urban areas, water bodies, and barren lands. Each image is labeled with its corresponding land-use category, enabling supervised learning approaches. The high-quality imagery and well-structured annotations make this dataset suitable for a wide range of applications, including land-use change detection, urban growth prediction, and environmental impact assessment.
-    </p>
+      This project leverages three unsupervised data mining techniques—clustering, association rule mining (ARM), and principal component analysis (PCA)—to uncover hidden patterns in an agricultural dataset and enhance crop recommendations based on soil and weather properties. 
+      It begins by grouping data points using clustering methods such as K-means, hierarchical clustering, and DBSCAN while carefully addressing data preparation challenges like missing values and normalization, and by evaluating distance metrics (e.g., Euclidean and cosine similarity) to determine the best way to capture similarities among samples. 
+      The study then employs ARM through the Apriori algorithm to extract frequent itemsets and association rules, assessing these rules with measures like support, confidence, and lift to reveal which features tend to occur together. Finally, PCA is applied to reduce the dimensionality of the data while retaining the majority of its inherent variance, thereby simplifying the dataset for further analysis. 
+      Grounded in an extensive literature review on key factors such as soil texture, pH levels, and weather attributes, the work also examines the raw state of the data and its subsequent transformation, acknowledging limitations due to measurement noise and biases. Overall, the integrated approach generates complementary insights that not only enrich the technical understanding of agronomic variables but also have practical implications for improved crop management and decision-making in agriculture.
+      </p>
 <p>
-Dataset source: https://www.kaggle.com/datasets/apollo2506/landuse-scene-classification
- <!-- Visualization 10 -->
     <div class="image-container">
-      <img src="10.png" alt="Scatter Plot of Relationships">
-      <p><strong></strong>Images from each class of the dataset.</p>
+      <img src="https://storage.googleapis.com/kaggle-datasets-images/1046158/1760012/9c08835b1e7e1084728b5202089fb65b/dataset-cover.jpg?t=2020-12-19-05-11-01" alt="">
     </div>
 
 </p>
     <p>
         <b>10 Research Gaps/ Questions</b>
         <ol>
-<li>Land Use Trends: How have land-use patterns changed over the last decade, and what are the primary causes of these shifts?
-<li>Classification Accuracy: Which machine learning methods (e.g., CNNs, Random Forests, or SVMs) are most accurate in identifying land-use scenes from this dataset?
-<li>Feature Importance: What are the most important aspects in satellite imagery that help with correct land-use classification?
-<li>Temporal Analysis: Can this dataset be coupled with temporal data to examine land-use trends across time?
-<li>Urbanisation Impact: How does urban expansion influence adjacent land-use categories, such as agricultural land and forests?
-<li>Model Generalisation: How well can models trained on this dataset apply to other locations or datasets with comparable land-use categories?
-<li>Environmental degradation: Can this dataset be used to identify?
-<li>Environmental deterioration: Can this dataset be used to identify areas of environmental deterioration, such as deforestation and soil erosion?
-<li>Multi-Class Imbalance: How can the dataset's class imbalance (e.g., fewer photos for specific categories) be addressed to improve model performance?
-<li>Integration with Other Data: How can this dataset be combined with other geographic datasets (such as climate or population density) to improve land-use predictions?
+           <li>The following are ten questions that this data can answer:
+            <li>How do variations in soil nutrients (N, P, K) influence the appropriateness of specific crops?
+              <li>What are the most frequently recommended crops in high rather than low rainfall?
+                <li>How is ambient temperature related to crop choice in different regions?
+                  <li>How do the soil pH levels correlate with the recommended crops?
+                    <li>How does relative humidity influence the effectiveness of certain levels of soil nutrients on crop appropriateness?
+            <li>Are there some combinations of climatic and soil conditions that always favor some crops?
+              <li>Can crop recommendations be deduced from seasonal trends in environmental conditions?
+                <li>How do record environmental readings affect the expected crop selection, and what might that say about regional agriculture?
+            <li>Which crops appear to be most resilient across a broad spectrum of conditions in the data set? Why does a small variation in any one factor (e.g., a small increase in temperature) lead to a different crop recommendation?    
 
 
     </p>
@@ -116,69 +112,69 @@ Dataset source: https://www.kaggle.com/datasets/apollo2506/landuse-scene-classif
     <p>
       Exploratory Data Analysis (EDA) Description for the Land-Use Scene Classification Dataset
 Exploratory Data Analysis (EDA) is a critical step in understanding the structure, patterns, and relationships within the dataset 
-. For the Land-Use Scene Classification Dataset, EDA was conducted to uncover insights about the distribution of land-use categories, identify potential data quality issues, and prepare the dataset for machine learning models. The dataset contains high-resolution satellite images categorized into 21 distinct land-use classes, such as agricultural land, forests, urban areas, and water bodies. Below is a detailed description of the EDA process and findings.
+. For the Land-Use Scene Classification Dataset, EDA was conducted to uncover insights about the distribution of land-use categories, identify potential data quality issues, and prepare the dataset for machine learning models. The dataset contains high-resolution satellite images categorized into 12 distinct land-use classes, such as agricultural land, forests, urban areas, and water bodies. Below is a detailed description of the EDA process and findings.
     </p>
     <h3>Visualizations</h3>
 
     <!-- Visualization 1 -->
     <div class="image-container">
       <p><strong>Figure 1:</strong> Initial Dataset scraped from Kaggle API using python.</p>
-      <img src="1.png" alt="Histogram of Numerical Features">
+      <img src="images\1.png" alt="Histogram of Numerical Features">
 
     </div>
 
     <!-- Visualization 2 -->
     <div class="image-container">
       <p><strong>Figure 2:</strong> Dataset after cleaning process</p>
-      <img src="2.png" alt="Cleaned Dataset">
+      <img src="images\2.png" alt="Cleaned Dataset">
 
     </div>
 
     <!-- Visualization 3 -->
     <div class="image-container">
-      <img src="3.png" alt="Missing Values Heatmap">
+      <img src="images\3.png" alt="Missing Values Heatmap">
       <p><strong>Figure 3:</strong> Few Images from the dataset.</p>
     </div>
 
     <!-- Visualization 4 -->
     <div class="image-container">
-      <img src="4.png" alt="Boxplot for Outliers">
+      <img src="images\4.png" alt="Boxplot for Outliers">
       <p><strong>Figure 4:</strong> Class Distribution of Land Cover Images Dataset.</p>
     </div>
 
     <!-- Visualization 5 -->
     <div class="image-container">
-      <img src="5.png" alt="Pairplot of Numerical Features">
+      <img src="images\5.png" alt="Pairplot of Numerical Features">
       <p><strong>Figure 5:</strong> Classes in the Dataset.</p>
     </div>
 
     <!-- Visualization 6 -->
     <div class="image-container">
-      <img src="6.png" alt="Countplot of Categorical Features">
+      <img src="images\6.png" alt="Countplot of Categorical Features">
       <p><strong>Figure 6:</strong> Aspect Ration Distribution of Images.</p>
     </div>
 
     <!-- Visualization 7 -->
     <div class="image-container">
-      <img src="7.png" alt="Pie Chart of Class Proportions">
+      <img src="images\7.png" alt="Pie Chart of Class Proportions">
       <p><strong>Figure 7:</strong> Scatter plot of Image size distribution among the Dataset.</p>
     </div>
 
     <!-- Visualization 8 -->
     <div class="image-container">
-      <img src="8.png" alt="KDE Plot of Numerical Features">
+      <img src="images\8.png" alt="KDE Plot of Numerical Features">
       <p><strong>Figure 8:</strong> Average Image size per class.</p>
     </div>
 
     <!-- Visualization 9 -->
     <div class="image-container">
-      <img src="9.png" alt="Violin Plot of Class-Wise Distribution">
+      <img src="images\9.png" alt="Violin Plot of Class-Wise Distribution">
       <p><strong>Figure 9:</strong>  Brightness distriubtion of IMages in Dataset.</p>
     </div>
 
     <!-- Visualization 10 -->
     <div class="image-container">
-      <img src="10.png" alt="Scatter Plot of Relationships">
+      <img src="images\10.png" alt="Scatter Plot of Relationships">
       <p><strong>Figure 10:</strong>Images from each class of the dataset.</p>
     </div>
 
@@ -187,6 +183,109 @@ According to the analysis or EDA I observed that the dataset is now clean and al
 </b></p>
 
   </div>
+</div>
+
+<!-- PCA-->
+<div id="pca" class="tabcontent">
+  <h3>Principle Component Analysis (PCA)</h3>
+  <p>
+    <b>Overview:</b><br>
+    Principal Components
+    First Principal Component (PC1): Captures the maximum variance in the data 
+    . For example, in a dataset with correlated features (e.g., height and weight), PC1 would align with the direction where data points spread out the most.
+    Second Principal Component (PC2): Explains the next highest variance uncorrelated with PC1 and orthogonal to it. Subsequent components follow this pattern but account for progressively less variance.
+    Key Idea: By focusing on the top few PCs (e.g., PC1 and PC2), you can simplify complex data while preserving its most important patterns.
+    Variance Explained
+    The scree plot visualizes the variance contributed by each PC. Typically, the first 2–3 components explain most of the variance, allowing you to discard less informative dimensions without significant information loss.
+    <br><b>How ARM is Used in the Project</b><br>
+    We discuss how PCA is used in the project to reduce dimensionality, thus simplifying the dataset while retaining essential variation that informs crop prediction. The explanation highlights the significance of first few principal components and how PCA supports subsequent clustering and ARM by helping to visualize data in lower-dimensional spaces.   <br><br>Figure:Variance explained by each principal component. <br><img src="images\18.png" alt=""/><br><img src="images\21.jpg" alt=""/>
+  </p>
+  <p>
+    <b>Data Preparation:</b><br>
+    Data preparation for PCA involved standardizing the numerical variables since PCA relies on variances that are scale-sensitive. 
+The code used for the PCA transformation is available via this link: <a href="https://github.com/crop-recommendation/code.py">https://github.com/yourrepo/pca_code.py</a>. The code leverages the scikit-learn library in Python and includes steps for standard normalization and the extraction of principal components. Detailed comments explain the variance retention rate and the choice of the number of components.
+<br><br>Figure:The original high-dimensional data frame <br><img src="images\16.png" alt=""/><br>
+Figure: The data after standardization and subsequent PCA transformation<br><img src="images\17.png" alt=""/>
+</p>
+  <p><b>Results</b><br>
+    The PCA results are summarized by visualizing both 2D and 3D projections. First figure shows the 2D scatter plot of the first two principal components, while other figure presents an interactive 3D plot that reveals further data grouping.
+Our analysis indicates that the first two principal components explain over 75% of the total variance, with a further component adding an additional 10% of variance. These results demonstrate that PCA effectively reduces dimensionality while retaining the essential information for subsequent analysis.
+The most important principal components correspond to <b>soil nutrient content and weather variability</b>. In conclusion, PCA has played a key role in simplifying the data without sacrificing critical information. The dimensionality reduction further supports improved visualization and interpretation of clusters and associations, ultimately facilitating more robust decision-making in our crop recommendation problem.
+  <br><br>Figure: 2D scatter plot<br><img src="images\19.png" alt=""/><br>
+  <br>Figure: 3D plot<br><img src="images\20.png" alt=""/><br>
+</p>
+</div>
+
+<!-- Clustering-->
+<div id="clustering" class="tabcontent">
+  <h3>Clustering Analysis</h3>
+  <p><b>Overview:<br></b>
+
+   Clustering and Distance Metrics Explained:
+    Clustering is an unsupervised learning technique that groups data points into clusters based on similarity. The *distance metric* defines how similarity is quantified, playing a pivotal role in determining cluster quality.  
+<br><b>How ARM is Used in the Project</b><br>
+    1.Clustering**: Groups data points so that intra-cluster points are more similar than inter-cluster points. For example, customer segmentation groups buyers by behavior or demographics.  
+    <br>Figure: After Clustering Dataframe:<br><img src="images\27.png" alt=""><br>
+    2.Distance Metrics**:  
+      - **Euclidean Distance**: Straight-line distance between two points, ideal for low-dimensional data:  
+        \[
+        d(p, q) = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2}
+        \]
+      - **Manhattan Distance**: Sum of absolute differences along each axis, robust to outliers:  
+        \[
+        d(p, q) = \sum_{i=1}^{n} |p_i - q_i|
+        \]  
+      - **Cosine Similarity**: Measures the angle between vectors, useful for text/image embeddings.  
+    
+    The choice of metric directly impacts cluster shapes. For instance, Euclidean distance works well for spherical clusters, while Manhattan suits grid-like structures.
+    
+  </p>
+  <p>
+    <b>Data Preparation:<br></b>
+    Before clustering, the dataset was cleaned and normalized. In Figure below you can see a snapshot of the raw data frame and in another figure the data after normalization and feature engineering. We discretized continuous variables where necessary and encoded categorical variables for compatibility with clustering algorithms.
+    An accessible link to our clustering code is provided here: <a href="https://github.com/yourrepo/clustering_code.py">https://github.com/yourrepo/clustering_code.py</a>. Our implementation in Python uses libraries such as scikit-learn for K-means and DBSCAN, and SciPy for hierarchical clustering. We include comments throughout the code to explain the transformation steps and the rationale for selected hyperparameters.
+  <br><br>Figure: Before Clustering Dataframe:<br><img src="images\23.png" alt=""><br>
+  <br>Figure: After Clustering Dataframe:<br><img src="images\22.png" alt=""><br>
+</p>
+  <p>
+  <b>Results:<br></b>The clustering results are presented with multiple visualizations. We include a dendrogram image that shows the results of hierarchical clustering and additional cluster maps for different values of K. The results detail cluster compositions for K = 3, 4, and 5, and we evaluated these using the silhouette score—with the optimal K value being highlighted in the report. 
+  We also compare results from K-means, hierarchical clustering, and DBSCAN, discussing strengths and weaknesses of each method in the context of our application.
+  In conclusion, the clustering analysis revealed distinct patterns within the soil-weather dataset. Non-technically, these clusters indicate that certain fertility and moisture conditions tend to co-occur, thereby suggesting groups of environments that may favor specific crop types. The clustering outcomes guide further analysis and serve as a basis for integrating association rules and dimensionality reduction.
+  <br><br>Figure: K-Means Clustering<br><img src="images\24.png" alt=""><br>
+  <br>Figure: Hierarchical clustering dendrogram<br><img src="images\25.png" alt=""><br>
+  <br>Figure: DBSCAN clusstering<br><img src="images\26.png" alt=""><br>
+</div>
+
+<!-- ARM-->
+<div id="arm" class="tabcontent">
+  <h3>Clustering Analysis</h3>
+  <p><b>Overview:<br></b>
+    Association Rule Mining (ARM) is a technique used to uncover interesting relationships between variables in large datasets. It is commonly applied in market basket analysis, recommendation systems, and other domains to identify frequent itemsets and generate association rules.<br>
+    <br><b>How ARM is Used in the Project</b><br>
+In this project, ARM can be applied to the dataset to identify relationships between soil properties, weather conditions, and crop recommendations. For example:
+Frequent Itemsets: Identify combinations of soil properties (e.g., pH, K, P) and weather conditions that frequently occur together.
+Association Rules: Generate rules such as:
+"If the soil pH is between 5.5 and 6.5 and the potassium level is high, then the recommended crop is Barley."
+"If the weather condition is dry and the phosphorus level is low, then the recommended crop is Maize."
+These insights can help in making data-driven decisions for crop recommendations based on soil and weather conditions.
+<br><br>Figure: Association rules<br><img src="images\28.png" alt=""><br>
+<br>Figure: Frequent Itemsets<br><img src="images\29.png" alt=""><br>
+<br>Figure: Association rules: Lift vs Confidence<br><img src="images\30.png" alt=""><br>
+  </p>
+  <p>
+  <b>Data preparation:<br></b>For association rule mining, the dataset was transformed into a transactional format where each transaction lists discrete items representing soil color, discretized pH values, nutrient levels, and crop labels. Figure below shows a sample of the original data frame while another displays the transformed transactional data.
+  An accessible link to our ARM code is provided here: <a href="https://github.com/yourrepo/arm_code.py">https://github.com/yourrepo/arm_code.py</a>. The code is implemented in Python using the mlxtend library which provides functions for one-hot encoding, mining frequent itemsets with the Apriori algorithm, and generating association rules based on minimum thresholds for support and confidence. Comments in the code explain each step of the processing pipeline clearly.
+  <br>Figure: Association rules: Lift vs Confidence<br><img src="images\35.png" alt=""><br>
+ </p>
+  <p>
+    <b>Results:<br></b>The ARM analysis produced a rich set of association rules. We filtered the results to report the top 15 rules sorted by support, confidence, and lift. In our code we set a minimum support threshold of 5% and a minimum confidence of 60%.
+    A network visualization of the rules is provided below. In this image, nodes represent items and directed edges connect antecedent items to consequent items. The network layout highlights clusters of rules that show strong associations between certain soil properties and crop recommendations.
+    In conclusion, the ARM analysis provided actionable insights into which combinations of soil attributes are most significant for predicting crop labels. Nontechnically, these results underscore common scenarios where certain soil conditions tend to favor particular crops, supporting recommendations for better farm management practices.
+    <br>Figure: Top 15 rules by support<br><img src="images\31.png" alt=""><br>
+    <br>Figure: Top 15 rules by lift<br><img src="images\32.png" alt=""><br>
+    <br>Figure: Top 15 rules by confidence<br><img src="images\33.png" alt=""><br>
+    <br>Figure: Association rules in network visualization<br><img src="images\34.png" alt=""><br>
+  </p>
 </div>
 
   <!-- JavaScript to handle tab switching -->
