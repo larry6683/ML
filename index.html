@@ -203,7 +203,7 @@ According to the analysis or EDA I observed that the dataset is now clean and al
   <p>
     <b>Data Preparation:</b><br>
     Data preparation for PCA involved standardizing the numerical variables since PCA relies on variances that are scale-sensitive. 
-The code used for the PCA transformation is available via this link: <a href="https://github.com/crop-recommendation/code.py">https://github.com/yourrepo/pca_code.py</a>. The code leverages the scikit-learn library in Python and includes steps for standard normalization and the extraction of principal components. Detailed comments explain the variance retention rate and the choice of the number of components.
+The code used for the PCA transformation is available via this link: <a href="https://github.com/larry6683/ML/blob/main/Crop%20recommendation.ipynb">https://github.com/yourrepo/pca_code.py</a>. The code leverages the scikit-learn library in Python and includes steps for standard normalization and the extraction of principal components. Detailed comments explain the variance retention rate and the choice of the number of components.
 <br><br>Figure:The original high-dimensional data frame <br><img src="images\16.png" alt=""/><br>
 Figure: The data after standardization and subsequent PCA transformation<br><img src="images\17.png" alt=""/>
 </p>
@@ -243,7 +243,7 @@ The most important principal components correspond to <b>soil nutrient content a
   <p>
     <b>Data Preparation:<br></b>
     Before clustering, the dataset was cleaned and normalized. In Figure below you can see a snapshot of the raw data frame and in another figure the data after normalization and feature engineering. We discretized continuous variables where necessary and encoded categorical variables for compatibility with clustering algorithms.
-    An accessible link to our clustering code is provided here: <a href="https://github.com/yourrepo/clustering_code.py">https://github.com/yourrepo/clustering_code.py</a>. Our implementation in Python uses libraries such as scikit-learn for K-means and DBSCAN, and SciPy for hierarchical clustering. We include comments throughout the code to explain the transformation steps and the rationale for selected hyperparameters.
+    An accessible link to our clustering code is provided here: <a href="https://github.com/larry6683/ML/blob/main/Crop%20recommendation.ipynb">https://github.com/yourrepo/clustering_code.py</a>. Our implementation in Python uses libraries such as scikit-learn for K-means and DBSCAN, and SciPy for hierarchical clustering. We include comments throughout the code to explain the transformation steps and the rationale for selected hyperparameters.
   <br><br>Figure: Before Clustering Dataframe:<br><img src="images\23.png" alt=""><br>
   <br>Figure: After Clustering Dataframe:<br><img src="images\22.png" alt=""><br>
 </p>
@@ -274,7 +274,7 @@ These insights can help in making data-driven decisions for crop recommendations
   </p>
   <p>
   <b>Data preparation:<br></b>For association rule mining, the dataset was transformed into a transactional format where each transaction lists discrete items representing soil color, discretized pH values, nutrient levels, and crop labels. Figure below shows a sample of the original data frame while another displays the transformed transactional data.
-  An accessible link to our ARM code is provided here: <a href="https://github.com/yourrepo/arm_code.py">https://github.com/yourrepo/arm_code.py</a>. The code is implemented in Python using the mlxtend library which provides functions for one-hot encoding, mining frequent itemsets with the Apriori algorithm, and generating association rules based on minimum thresholds for support and confidence. Comments in the code explain each step of the processing pipeline clearly.
+  An accessible link to our ARM code is provided here: <a href="https://github.com/larry6683/ML/blob/main/Crop%20recommendation.ipynb">https://github.com/yourrepo/arm_code.py</a>. The code is implemented in Python using the mlxtend library which provides functions for one-hot encoding, mining frequent itemsets with the Apriori algorithm, and generating association rules based on minimum thresholds for support and confidence. Comments in the code explain each step of the processing pipeline clearly.
   <br>Figure: Association rules: Lift vs Confidence<br><img src="images\35.png" alt=""><br>
  </p>
   <p>
