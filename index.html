@@ -69,6 +69,7 @@
     <a onclick="showTab('pca')">PCA</a>
     <a onclick="showTab('clustering')">Clustering</a>
     <a onclick="showTab('arm')">ARM</a>
+    <a onclick="showTab('naive-bayes')">ARM</a>
   </nav>
   
   <!-- Introduction Tab -->
@@ -242,9 +243,9 @@ The most important principal components correspond to <b>soil nutrient content a
    Clustering and Distance Metrics Explained:
     Clustering is an unsupervised learning technique that groups data points into clusters based on similarity. The *distance metric* defines how similarity is quantified, playing a pivotal role in determining cluster quality.  
 <br><b>How ARM is Used in the Project</b><br>
-    1.Clustering**: Groups data points so that intra-cluster points are more similar than inter-cluster points. For example, customer segmentation groups buyers by behavior or demographics.  
+    1. Clustering**: Groups data points so that intra-cluster points are more similar than inter-cluster points. For example, customer segmentation groups buyers by behavior or demographics.  
     <br>Figure: After Clustering Dataframe:<br><img src="images\27.png" alt=""><br>
-    2.Distance Metrics**:  
+    2. Distance Metrics**:  
       - **Euclidean Distance**: Straight-line distance between two points, ideal for low-dimensional data:  
         \[
         d(p, q) = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2}
@@ -307,9 +308,9 @@ These insights can help in making data-driven decisions for crop recommendations
 </div>
 
 <!-- Naive Bayes -->
-  <div>
+  <div id="naive-bayes" class="tabcontent">
     <h4>(a) Overview</h4>
-Naive Bayes (NB) is a probabilistic classification algorithm based on Bayes' Theorem. It assumes that the features are independent of each other, which simplifies computation and makes it efficient for large datasets. Naive Bayes is widely used in text classification, spam filtering, sentiment analysis, and medical diagnosis.
+Naive Bayes is a probabilistic classification algorithm based on Bayes' Theorem. It assumes that the features are independent of each other, which simplifies computation and makes it efficient for large datasets. Naive Bayes is widely used in text classification, spam filtering, sentiment analysis, and medical diagnosis.
 Types of Naive Bayes Classifiers:
 Gaussian Naive Bayes (GNB):
 Assumes that the features follow a Gaussian (normal) distribution.
