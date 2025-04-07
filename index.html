@@ -70,6 +70,8 @@
     <a onclick="showTab('clustering')">Clustering</a>
     <a onclick="showTab('arm')">ARM</a>
     <a onclick="showTab('naive-bayes')">Naive Bayes</a>
+    <a onclick="showTab('decision-tree')">Decision Trees</a>
+    <a onclick="showTab('regression')">Regression</a>
   </nav>
   
   <!-- Introduction Tab -->
@@ -196,6 +198,11 @@ Exploratory Data Analysis (EDA) is a critical step in understanding the structur
       <img src="images\10.png" alt="Scatter Plot of Relationships">
       <p><strong>Figure 10:</strong>Images from each class of the dataset.</p>
     </div>
+    <!-- Data used for Modelling -->
+<div class="image-container">
+  <img src="images/36.jpeg" alt="Scatter Plot of Relationships">
+  <p><strong></strong>Cleaned dataframe used to perform supervised learning models.</p>
+</div>
 
 <p><b>
 According to the analysis or EDA I observed that the dataset is now clean and all the 7530 images in the dataset are perfectly processed.
@@ -309,7 +316,7 @@ These insights can help in making data-driven decisions for crop recommendations
 
 <!-- Naive Bayes -->
   <div id="naive-bayes" class="tabcontent">
-    <h3>Naive Bayes:</h3>
+    <h3>Supervised learning: Naive Bayes</h3>
     <h4>(a) Overview</h4>
 Naive Bayes is a probabilistic classification algorithm based on Bayes' Theorem. It assumes that the features are independent of each other, which simplifies computation and makes it efficient for large datasets. Naive Bayes is widely used in text classification, spam filtering, sentiment analysis, and medical diagnosis.
 <br>Types of Naive Bayes Classifiers:<br>
@@ -331,14 +338,145 @@ Comparison:<br>
   <li> Categorical NB is specifically designed for categorical features, making it ideal for datasets with non-numeric attributes.</li>
 </ul>
 
-    <br><br>
+    <br>
     <h4>(b) Data Prep:</h4>
-    <a href='https://drive.google.com/file/d/1_Oachbx5s9PMW-li8AidlthSJlEQpBeX/view?usp=sharing' alt=''>Linkn to data prepared</a>
-    <img src='' alt="dataframe">Image of the dataframe used.</img>
+    <p>
+      1. Labeled Data: The dataset is labeled.<br>
+2. Train-Test Split: The data is split into training and testing sets to evaluate model performance.<br>
+<b>The split must be disjoint to avoid data leakage.</b><br>
+3. Data Types: Different Naive Bayes flavors require different data formats.<br>
+Gaussian NB: Continuous features.<br>
+Multinomial NB: Discrete features.<br>
+Bernoulli NB: Binary features.<br>
+Categorical NB: Categorical features.
+    </p>
+    <a href='https://drive.google.com/file/d/1_Oachbx5s9PMW-li8AidlthSJlEQpBeX/view?usp=sharing' alt=''>Link to the data prepared</a><br>
+    Image of the dataframe used.Dataframe too long to fit in this image.<br>
+    <img src='images/36.jpeg' alt="dataframe"></img><br>
+    Training Dataframe:(X_train)<br>
+    <img src="images/37.png"/><br>
+    Testing Dataframe:(X_test)<br>
+    <img src="images/38.png"/><br>
+ 
+   <h4>(c) Code:</h4> 
+<p>   Link to the Code: <a href="https://github.com/larry6683/ML/blob/main/Crop%20Recommendation%20using%20Soil%20Properties%20and%20Weather%20Prediction.ipynb">https://github.com/larry6683/ML/blob/main/Crop%20Recommendation%20using%20Soil%20Properties%20and%20Weather%20Prediction.ipynb</a></p><br>
+
+<h4>(d) Results:</h4>
+Accuracy Scores: Comparing the accuracy of the models.<br>
+Confusion Matrices: The confusion matrices for each model to visualize true positives, false positives, true negatives, and false negatives.<br>
+Observations:<br>
+1. Gaussian NB performs well with continuous features like pH and nutrient levels.<br>
+<img src="images/39.png"/><br>   <img src="images/43.png"/><br>
+2. Multinomial NB is effective for discrete features like soil type.<br>
+<img src="images/40.png"/><br>   <img src="images/44.png"/><br>
+3. Bernoulli NB.<br>
+<img src="images/41.png"/><br>   <img src="images/45.png"/><br>
+4. Categorical NB is ideal for categorical features like soil color.<br>
+<img src="images/42.png"/><br>   <img src="images/46.png"/><br>
+
+<h4>(e) Conclusions</h4>
+Naive Bayes is a simple yet reliable classifier. It would be fine if we have the assumption of independence. Gaussian NB was suitable for continuous features, and Multinomial NB was suitable for discrete features, while Categorical NB was suitable for categorical features. 
+The models can be utilized to classify crop suitability based on soil and climate information to help farmers make intelligent decisions.
+
   </div>
 
+<!-- Decision Tree -->
+<div id="decision-tree" class="tabcontent">
+  <h3>Supervised learning: Decision Trees</h3>
+  <h4>(a) Overview</h4>
 
-  
+  Decision Trees (DTs) are a classification as well as regression method used in supervised learning. DTs partition the data according to feature values and construct a tree-based model. DTs are interpretable in nature and are able to process categorical as well as continuous data.
+ <br><b> Main Ideas:</b><br>
+  Gini Index: This is a measure of a node's impurity. In Gini, lower is desirable.<br>
+  Entropy: It quantifies the randomness of information. Low entropy implies good splits.<br>
+  Information Gain: The reduction of entropy after a split. The greater the information gain, the better the split.<br>
+  Example of Gini and Information Gain:<br>
+  I choose "Barley" and "Bean".<br>
+  Gini Index before split: 0.5.<br>
+  Gini Index after split: 0.2<br>
+  Information Gain = 0.5 - 0.2 = 0.3.<br>
+  Infinite Trees:<br>
+  We can generate an unlimited number of trees by repeatedly partitioning the data. This will result in overfitting. We can prevent this by limiting tree depth or pruning.<br>
+  <br>
+  <h4>(b) Data Prep:</h4>
+  <ul>
+    <li>Using the same dataset as Naive Bayes.</li>
+    <li>Spliting the data into training and testing sets.</li>
+    <li> Ensure the split is disjoint to avoid data leakage.</li>
+  </ul>
+  Image of the dataframe used.Dataframe too long to fit in this image.<br>
+  <img src='images/36.jpeg' alt="dataframe"></img><br>
+  <br>
+ <h4>(c) Code:</h4> 
+<p>   Link to the Code: <a href="https://github.com/larry6683/ML/blob/main/Crop%20Recommendation%20using%20Soil%20Properties%20and%20Weather%20Prediction.ipynb">https://github.com/larry6683/ML/blob/main/Crop%20Recommendation%20using%20Soil%20Properties%20and%20Weather%20Prediction.ipynb</a></p><br>
+
+ <br>
+
+ <h4>(d) Results:</h4>
+ 1. Accuracy Scores: Comparing the accuracy of the trees.<br>
+ 2. Confusion Matrices: Displaying the confusion matrices for each tree.<br>
+ 3. Tree Visualizations: Include visualizations of at least three different trees with different root nodes.<br>
+ Observations:<br>
+ <h5>Decision Tree 1 (gini, max_depth=5)</h5>
+Evaluation Metrics:<br>
+<img src="images/48.png"/><br>
+Decision tree plot:<br>
+<img src="images/49.png"/><br>
+ <h5>Decision Tree 2 (gini, max_depth=3)</h5>
+ Evaluation Metrics:<br>
+ <img src="images/50.png"/><br>
+ Decision tree plot:<br>
+ <img src="images/51.png"/><br>
+ <h5>Decision Tree 3 (entropy, max_depth=4)</h5>
+ Evaluation Metrics:<br>
+ <img src="images/52.png"/><br>
+ Decision tree plot:<br>
+ <img src="images/53.png"/><br>
+Max_depth =4 and criterion = entropy gave the highest accuracy.<br>
+ <br>
+<h4>(e) Conclusions</h4>
+Decision Trees are explainable and are good for both continuous and categorical data. Decision Trees can be applied to discover the most influential features in crop suitability prediction. 
+They overfit, but it is possible to evade it by limiting tree depth or by pruning.
+</div>
+
+<!-- Regression-->
+<div id="regression" class="tabcontent">
+  <h3>Supervised learning: Regression</h3>
+  <h4>(a) Define and explain linear regression.</h4>
+  Linear regression is a supervised learning model used to predict a continuous target variable. It illustrates the relationship between the target variable and one or more feature variables by fitting the data into a linear equation.
+  <h4>(b) Define and explain logistic regression.</h4>
+  Logistic regression is a supervised classifier for binary classification tasks. Logistic regression predicts a class probability through the use of the sigmoid function, which scales predictions onto the range 0 to 1.
+  <h4>(c) In how many ways are they alike, and in how many are they different?</h4>
+  Similarities:
+  Both are linear models.
+  Both utilize optimization routines to reduce loss functions.
+  Differences:
+  Linear regression predicts continuous values, but logistic regression predicts probabilities in classification.
+  Logistic regression uses the sigmoid function but linear regression does not.
+  <h4>(d) Does logistic regression use the Sigmoid function? Why?</h4>
+  Yes, logistic regression uses the sigmoid function to map predictions onto probabilities between 0 and 1. The sigmoid function ensures that the output can be understood as a probability.
+  <h4>(e) Explain how maximum likelihood is connected to logistic regression.</h4>
+  Logistic regression uses maximum likelihood estimation (MLE) to find parameters that maximize the likelihood of observed data. MLE guarantees the model's prediction is as close to the true data as possible.
+<br><br>
+<b>Simple comparision of all 3 models:</b><br>
+1. Naive Bayes: Performs well with categorical and discrete features.<br>
+2. Decision Trees: Effective for both categorical and continuous data but prone to overfitting.<br>
+3. Logistic Regression: Ideal for binary classification tasks with continuous features.<br>
+
+<h4>Coding: Comparing Logistic regression analysis and Multinomial Naive Bayes Classifiers</h4>
+<p>   Link to the Code: <a href="https://github.com/larry6683/ML/blob/main/Crop%20Recommendation%20using%20Soil%20Properties%20and%20Weather%20Prediction.ipynb">https://github.com/larry6683/ML/blob/main/Crop%20Recommendation%20using%20Soil%20Properties%20and%20Weather%20Prediction.ipynb</a></p><br>
+Image of the updated dataframe of two labels (Beans and Barley).<br>
+<img src="images/54.png"/><br>
+1.Logistic regression for updated 2 label dataset: Accuracy, classification report and confusion matrix below.<br>
+<img src="images/55.png"/><br>
+<img src="images/56.png"/><br>
+2. Naive bayes for updated 2 label dataset: Accuracy, classification report and confusion matrix below.<br>
+<img src="images/57.png"/><br>
+<img src="images/58.png"/><br>
+
+</div>
+
+
   <!-- JavaScript to handle tab switching -->
   <script>
     function showTab(tabName) {
