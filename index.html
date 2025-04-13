@@ -132,11 +132,23 @@ Through a performance comparison of these two models, the project will identify 
 
 <!-- Data Preparation/EDA -->
   <div id="data-prep" class="tabcontent">
-    <h3>Data Preparation/EDA</h3>
+    <h3>Data Overview</h3>
     <p>
-      Exploratory Data Analysis (EDA) Description for the Land-Use Scene Classification Dataset
-Exploratory Data Analysis (EDA) is a critical step in understanding the structure, patterns, and relationships within the dataset 
-. For the Land-Use Scene Classification Dataset, EDA was conducted to uncover insights about the distribution of land-use categories, identify potential data quality issues, and prepare the dataset for machine learning models. The dataset contains high-resolution satellite images categorized into 12 distinct land-use classes, such as agricultural land, forests, urban areas, and water bodies. Below is a detailed description of the EDA process and findings.
+      1. Data Collection<br>
+The dataset was uploaded as a CSV file (cleaned_crop_data.csv). It contains the following features:<br>
+- Soil properties: Soilcolor, Ph, K, P, N, Zn, S.<br>
+- Environmental factors: QV2M-W, QV2M-Sp, QV2M-Su, QV2M-Au, T2M_MAX-W, T2M_MAX-Sp, T2M_MAX-Su, T2M_MAX-Au, T2M_MIN-W, T2M_MIN-Sp, T2M_MIN-Su, T2M_MIN-Au, PRECTOTCORR-W, PRECTOTCORR-Sp, PRECTOTCORR-Su, PRECTOTCORR-Au, WD10M, GWETTOP, CLOUD_AMT, WS2M_RANGE, PS.<br>
+- Target variable: label (crop type).<br>
+- Derived features: Ph_binned, N_P_interaction.<br>
+<br>
+2. Raw Data Overview<br>
+2.1. Displaying Raw Data<br>
+Below is a small portion of the raw data:
+brown	5.4	231	4.0	0.1333	1.0	16.0	8.50	25.34	Barley
+    </p><br>
+    <h3>2.2. Data Preparation/EDA</h3>
+    <p>
+      Exploratory Data Analysis (EDA) Description for the Crop recommendation dataset is a critical step in understanding the structure, patterns, and relationships within the dataset.
     </p>
     <h3>Visualizations</h3>
 
