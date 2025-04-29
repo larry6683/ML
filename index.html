@@ -154,7 +154,7 @@ The dataset was uploaded as a CSV file (cleaned_crop_data.csv). It contains the 
 <br>
 2. Raw Data Overview<br>
 2.1. Displaying Raw Data<br>
-Below is a small portion of the raw data:
+Below is a small portion of the raw data:<br>
 brown	5.4	231	4.0	0.1333	1.0	16.0	8.50	25.34	Barley
     </p><br>
     <h3>2.2. Data Preparation/EDA</h3>
@@ -165,8 +165,8 @@ brown	5.4	231	4.0	0.1333	1.0	16.0	8.50	25.34	Barley
 
     <!-- Visualization 1 -->
     <div class="image-container">
-      <p><strong>Figure 1:</strong> Initial Dataset scraped from Kaggle API using python.</p>
-      <img src="images\1.png" alt="Histogram of Numerical Features">
+      <p><strong>Figure 1:</strong> Original Dataframe</p>
+      <img src="images\1.png" alt="Original dataframe">
 
     </div>
 
@@ -274,21 +274,17 @@ The most important principal components correspond to <b>soil nutrient content a
   <p><b>Overview:<br></b>
 
    Clustering and Distance Metrics Explained:
-    Clustering is an unsupervised learning technique that groups data points into clusters based on similarity. The *distance metric* defines how similarity is quantified, playing a pivotal role in determining cluster quality.  
+    Clustering is an unsupervised learning technique that groups data points into clusters based on similarity. The distance metric defines how similarity is quantified, playing a pivotal role in determining cluster quality.  
 <br><b>How ARM is Used in the Project</b><br>
-    1. Clustering**: Groups data points so that intra-cluster points are more similar than inter-cluster points. For example, customer segmentation groups buyers by behavior or demographics.  
+    1. Clustering: Groups data points so that intra-cluster points are more similar than inter-cluster points. For example, customer segmentation groups buyers by behavior or demographics.  
     <br>Figure: After Clustering Dataframe:<br><img src="images\27.png" alt=""><br>
-    2. Distance Metrics**:  
-      - **Euclidean Distance**: Straight-line distance between two points, ideal for low-dimensional data:  
-        \[
-        d(p, q) = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2}
-        \]
-      - **Manhattan Distance**: Sum of absolute differences along each axis, robust to outliers:  
-        \[
-        d(p, q) = \sum_{i=1}^{n} |p_i - q_i|
-        \]  
-      - **Cosine Similarity**: Measures the angle between vectors, useful for text/image embeddings.  
-    
+    2. Distance Metrics:  <br>
+      - **Euclidean Distance: Straight-line distance between two points, ideal for low-dimensional data:  <br>
+      d = √[ (x2– x1)2 + (y2– y1)2]<br>
+      - **Manhattan Distance**: Sum of absolute differences along each axis, robust to outliers:  <br>
+      d = |x1 - x2| + |y1 - y2|<br>
+      - **Cosine Similarity**: Measures the angle between vectors, useful for text/image embeddings.  <br>
+      S _C(x, y) = x . y / ||x|| ×× ||y||<br>
     The choice of metric directly impacts cluster shapes. For instance, Euclidean distance works well for spherical clusters, while Manhattan suits grid-like structures.
     
   </p>
