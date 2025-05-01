@@ -84,7 +84,7 @@
     <a onclick="showTab('decision-tree')">Decision Trees</a>
     <a onclick="showTab('regression')">Regression</a>
     <a onclick="showTab('svm')">SVM</a>
-    <a onclick="showTab('ensemble')">Ensembled</a>
+    <a onclick="showTab('ensemble')">Ensemble</a>
     <a onclick="showTab('conclusion')">Conclusions</a>
   </nav>
   
@@ -167,6 +167,9 @@ brown |	5.4	| 231	| 4.0	| 0.1333	| 1.0	| 16.0	| 8.50	| 25.34	| Barley
     <h3>2.2. Data Preparation/EDA</h3>
     <p>
       Exploratory Data Analysis (EDA) Description for the Crop recommendation dataset is a critical step in understanding the structure, patterns, and relationships within the dataset.
+    </p>
+    <p>
+      - I split dataset into training and testing parts in .2 or .3 ratios as per the need.
     </p>
     <h3>Visualizations</h3>
 
@@ -768,29 +771,120 @@ is transformed into the 6D point
 <br><br>
 <h4>Test train splits</h4>
 Code Link: <a href="https://github.com/larry6683/ML/blob/main/Crop%20Recommendation%20using%20Soil%20Properties%20and%20Weather%20Prediction.ipynb">https://github.com/larry6683/ML/blob/main/Crop%20Recommendation%20using%20Soil%20Properties%20and%20Weather%20Prediction.ipynb</a>
-Data set link: <a href="https://github.com/larry6683/ML/blob/main/cleaned_crop_data%20.csv">https://github.com/larry6683/ML/blob/main/cleaned_crop_data%20.csv</a>
+<br> Data set link: <a href="https://github.com/larry6683/ML/blob/main/cleaned_crop_data%20.csv">https://github.com/larry6683/ML/blob/main/cleaned_crop_data%20.csv</a>
+<br><br>
+<img src="images\65.png"/>
+<img src="images\67.png"/>
+<br><br>
+<h4>Is the train and test split same?</h4>
+<p>No, The purpose of this split is to ensure that the model is trained on one subset of the data (the training set) and evaluated on a different subset (the testing set). This separation is essential for assessing how well the model generalizes to unseen data.</p>
+
+<h4>Data before and after transformation</h4>
+<img src="images\66.png"/>
+
+<p>- I split the training and testing parts in 70/30 ratio</p>
+
+<h4>Three different Kernels with (linear, poly, rbf )3 differen C values(0.1, 1, 10)</h4>
+<img src="images\68.png"/>
+<img src="images\69.png"/>
+<img src="images\70.png"/>
+<img src="images\71.png"/>
+<img src="images\72.png"/>
+<img src="images\73.png"/>
+<img src="images\74.png"/>
+<img src="images\75.png"/>
+<img src="images\76.png"/>
+<h4>Discussion: Almost every configuration gave the same result on this dataset.</h4>
+<img src="images\77.png"/>
+<img src="images\78.png"/><br><br>
+<h4>Decision Boundary SVM for C=4</h4>
+<b>Linear</b><br>
+<img src="images\79.png"/><br>
+<b>Ploy</b><br>
+<img src="images\80.png"/><br>
+<b>RBF</b><br>
+<img src="images\81.png"/><br>
 </div>
 
 
   <!-- Ensemble -->
 <div id="ensemble" class="tabcontent">
-  <h3>Ensembles methods</h3>
-  </div>
+  <h3>Ensembling Methods</h3>
+  <h4>What is Ensemble Learning</h4>
+  <img src="images\82.png"/>
+  <p>
+    A machine learning technique called ensemble learning combines the results of several models (also called "weak learners" or "base models") to produce a more robust and accurate model.  Combining the outputs of different models is thought to improve generalisation, reduce mistakes, and produce better prediction performance than separate models. 
+   
+    The premise behind ensemble learning is that it is possible to take use of the differences between the basic models.  While each model has its own advantages and disadvantages, when combined, they work in concert to produce predictions that are stronger and more reliable.</p>
+  <br>
+  <b>Code link from online:</b> <a href="https://stackoverflow.com/questions/52644099/ensemble-learning-using-neural-network-as-combination-technique">https://stackoverflow.com/questions/52644099/ensemble-learning-using-neural-network-as-combination-technique</a>
+  <br><br>
+  <b>How this code applies to my project</b><br>
+
+  Ensemble learning can be applied to your smart crop recommendation system to increase forecast accuracy and resilience.  Combining several models (such as Random Forest, KNN, and Decision Tree) allows the system to minimise the drawbacks of each model while utilising its advantages.  A more accurate and dependable recommendation system is produced by the Perceptron, which functions as a meta-model and learns the best weights to combine the basic models' predictions.
+  <br>
+  For example:
+  Tree: May overfit, but captures basic choice limits.
+  KNN: Has trouble with high-dimensional data but does well with local patterns.
+  Random Forest: May need more processing power, but it reduces overfitting and captures intricate patterns.
+  <br><br>
+<b>Results obtained with ensembling</b>
+<p>
+  The ensemble model combines the strengths of the base models and achieves higher accuracy than any individual model.
+  The Perceptron optimizes the weights of the base model predictions, ensuring that the final output is robust and reliable.
+</p>
+<h4>A Synopsis of the Approach</h4>
+<p>
+  Ensemble learning is used which integrates several machine learning models to increase prediction accuracy and robustness.  In particular, the project makes use of three foundational models:
+  A straightforward, interpretable model that divides data according to feature thresholds is called a decision tree classifier.
+  The K-Nearest Neighbours (KNN) algorithm is a distance-based algorithm that makes predictions based on the nearest neighbours' majority class.
+  An ensemble of decision trees called the Random Forest Classifier enhances generalisation and lessens overfitting.
+  A Perceptron Neural Network, which serves as a meta-model to determine the ideal weights for merging the base models' predictions, is used to integrate these models.  This strategy makes sure that each model's advantages are maximised while reducing its disadvantages.</p>
+<b>Code link: <a href="https://github.com/larry6683/ML/blob/main/Crop%20Recommendation%20using%20Soil%20Properties%20and%20Weather%20Prediction.ipynb">https://github.com/larry6683/ML/blob/main/Crop%20Recommendation%20using%20Soil%20Properties%20and%20Weather%20Prediction.ipynb</a></b>
+<h4>Data Transformation:</h4>
+<b>Train and test split:</b><br>
+<img src="images\65.png"/><br>
+<b>Data before transformation:</b>
+<p>
+  Numerical features with different scales<br>
+  Categorical variables (Soil color, Ph_binned)<br>
+  Mixed data types requiring preprocessing</p>
+<img src="images\84.png"/><br>
+<b>Data after transformation:</b>
+<p>Standardized numerical features (mean=0, std=1) <br>
+  Encoded categorical variables <br>
+  Engineered features (e.g., N_P_interaction) <br>
+  <img src="images\85.png"/><br>
+</p>
+<b>Classification Report & Confusion matrix:</b><br>
+<img src="images\86.png"/><br>
+<img src="images\87.png"/><br><br>
+<b>Results obtained:</b> <br>This new crop recommendation model utilized multiple machine learning models to accurately predict which crops are best suited for specific growing conditions. The system achieves an impressive accuracy of approximately 90%, indicating its effectiveness in making reliable crop recommendations. Key findings reveal that soil characteristics are the most significant factors influencing crop suitability, while weather patterns also play a crucial role. The system demonstrates versatility across various crop types, providing benefits such as improved resource utilization and a reduced risk of crop failure. However, it faces limitations, including a small dataset size of only 21 samples, limited seasonal data, and regional specificity, which may affect its generalizability.<br>
+</div>
+
 
     <!-- Conclusions -->
 <div id="conclusion" class="tabcontent">
   <h3>Conclusions</h3>
-  <p>
-    The process of developing a smart crop recommendation system based on machine learning demonstrates the game-changing contribution of data-centric technologies to modern farming. Adding climatic factors, soil types, and weather patterns, the research demonstrates how complex algorithms help farmers make improved choices. The technology simplifies agriculture, enhances efficiency, sustainability, and flexibility. Essentially, the system helps farmers select the most suitable crops for their respective environments, raising productivity while reducing resource wastage.
+  The development of an intelligent crop recommendation system based on machine learning reiterates the transformational potential of data-related technologies in agriculture today. This paper illustrates the ability of intelligent algorithms, powered by the interaction of climatic conditions, weather forecasts, and types of soils, to inform the farmers in a better manner. It reduces farming activity complexities, enhances productivity, and enhances sustainability. It provides farmers with timely information to select the best possible crops according to their specific conditions, thereby improving productivity without wasting resources. 
 <br><br>
-One of the key outcomes of this study is the in-depth grasp of soil-climate-crop performance relationships. Traditional farming relies on experience or past trends, which do not keep pace with rapid climate change and soil decline. Machine learning effectively uncovers subtleties in complex data and extracts underlying trends, such as the impact of soil pH, nutrient levels, and weather on crop success. This is valuable information for farmers to make informed, data-based decisions.
+  Most likely, the single most significant conclusion of this research is awareness regarding soil-climate-crop performance relationships. Experience-based traditional agricultural practices or traditional trends are insufficient in the wake of climate change at a rapid pace and degradation of soils. Machine learning, on the other hand, excels at uncovering concealed patterns in complex sets of data. To illustrate, it can map the influence of soil pH level, nutrient status, and climate patterns on harvest yield. This type of information is invaluable for farmers, who can make sensible, data-based decisions that return maximum yields for minimum risk.
+  <br>
+  <div class="image-container">
+    <img src="images\6.png" alt="">
+    </div>
+  <br>
+  The capacity of machine learning algorithms to learn and react to farm challenges is another important lesson. Various techniques, such as clustering, association rule mining, and supervised learning algorithms, were experimented in this research. Each one has strengths and weaknesses, but together they form a robust system that is able to handle the complexities of actual agriculture. For example, clustering might group similar soil types together, while supervised learning might figure out which crops are best suited for any given mix of conditions. This synergy makes the system comprehensive as well as adaptive.
+  <br><br>
+  Also, the system is agricultural sustainability-oriented. In that it recommends crops suitable for the situation at hand, it avoids overutilization of resources like water and fertilizers. Not only does this conserve resources, but also it avoids environmental degradation through cultivation. More so, weather sensitivity of the system encourages water conservation and assists farmers with adaptation to changing climatic factors. All these are aligned with global initiatives for promoting sustainable agriculture practice.
+  <br><br>
+  Lastly, this research validates the ability of machine learning to revolutionize agriculture and address some of the most pressing problems in the world. It envisions a world where productivity and sustainability are not opposing goals but complementary ones. Through technology and data, the system supports flourishing agricultural communities and world food security. This use of machine learning in farming is a giant step towards a more intelligent, sustainable future.
 <br><br>
-The flexibility of machine learning models to tackle agricultural issues is another significant conclusion. Various methodologies like clustering, association rule mining, and supervised learning algorithms were explored, each with their own advantages and disadvantages. This synergy provides an effective system that captures the complexities of real-world agriculture.
-<br><br>
-Moreover, agricultural sustainability takes precedence—suggesting crops well-suited to local circumstances can reduce overuse of resources and restrict use of poisonous fertilizers, and weather sensitivity encourages water conservation.
-<br><br>
-Ultimately, this research verifies machine learning's potential to revolutionize agriculture, and address the world's significant issues. It provides the positive vision of agriculture, where productivity and sustainability are not opposites, but complements, leading to prosperous farming communities.
- <br> </p>
+<b>Once again thanks to Dr.Gates for providing this opportunity to explore ML through the course.</b><br>
+<div class="image-container">
+  <img src="images\88.png" alt="">
+  </div>
+</p>
   </div>
 
   <!-- JavaScript to handle tab switching -->
