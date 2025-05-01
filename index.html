@@ -85,44 +85,49 @@
     <a onclick="showTab('regression')">Regression</a>
     <a onclick="showTab('svm')">SVM</a>
     <a onclick="showTab('ensemble')">Ensembled</a>
+    <a onclick="showTab('conclusion')">Conclusions</a>
   </nav>
   
   <!-- Introduction Tab -->
   <div id="introduction" class="tabcontent">
-    <h3>Introduction:</h3>
-
      <h3>Name: Sujith Battu</h3>
-    Github code: <a href="https://github.com/larry6683/ML">https://github.com/larry6683/ML</a>
-    <p>
-      Agriculture is among the cornerstones of human civilization, supplying food, raw materials, and income for billions of human beings worldwide. Nonetheless, with growing demands brought by climate change, soil degradation, as well as a globally surging population, agricultural producers are met with new challenges in maximizing crop yields. In solving the problems, data-driven solutions have come as realistic steps in supporting agriculture's decision-making. Taking into consideration the soil's condition, climate, as well as other environmental factors, machine-learning algorithms can forecast the most suitable crop for a given area, thus allowing sustainable agricultural production as well as maximum production level.
-      This study explores the development of a smart crop recommendation system based on advanced machine learning techniques to enable data-driven decision-making in agriculture. By integrating multiple datasets of soil characteristics, weather patterns, and historical crop yields, the system can identify and analyze complex patterns in the agricultural environment. 
-      The approach employs clustering and predictive modeling techniques to assess site-specific conditions accurately, leading to tailored crop recommendations that optimize both yield potential and resource use. 
-      By transcending traditional heuristic methods, the study demonstrates how a modern, systematic analysis of agronomic data can yield accurate and adaptable recommendations that are transferable to local conditions.
-<br><br>
-      Experimental verifications indicate that the machine learning–based method is more precise and consistent than conventional crop selection methods and hence of tremendous practical utility to farmers and agricultural stakeholders.
-      The model's capacity to process multivariate inputs also provides valuable insights into the impact of individual factors—such as soil pH, nutrient content, and climatic variability—on crop performance. Such insights not only render the model more interpretable but also enable sustainable land management and optimal production strategies. 
-      Overall, this research suggests the revolutionary potential of machine learning in precision agriculture, with implications for technology-facilitated strategies for maximizing sustainable, resilient, and economically viable crop production.
-
-
-    </p>
-    <a href="https://data.mendeley.com/datasets/8v757rr4st/1">Dataset source: https://data.mendeley.com/datasets/8v757rr4st/1</a></br>
-- I pulled data from the Elsevier's Mendeley data repository through an unofficial API that is available to fetch data related to crops.
-      <h3>Modelling</h3>
-    <p>
-      This project leverages three unsupervised data mining techniques—clustering, association rule mining (ARM), and principal component analysis (PCA)—to uncover hidden patterns in an agricultural dataset and enhance crop recommendations based on soil and weather properties. 
-      It begins by grouping data points using clustering methods such as K-means, hierarchical clustering, and DBSCAN while carefully addressing data preparation challenges like missing values and normalization, and by evaluating distance metrics (e.g., Euclidean and cosine similarity) to determine the best way to capture similarities among samples. 
-      The study then employs ARM through the Apriori algorithm to extract frequent itemsets and association rules, assessing these rules with measures like support, confidence, and lift to reveal which features tend to occur together. Finally, PCA is applied to reduce the dimensionality of the data while retaining the majority of its inherent variance, thereby simplifying the dataset for further analysis. 
-      Grounded in an extensive literature review on key factors such as soil texture, pH levels, and weather attributes, the work also examines the raw state of the data and its subsequent transformation, acknowledging limitations due to measurement noise and biases. Overall, the integrated approach generates complementary insights that not only enrich the technical understanding of agronomic variables but also have practical implications for improved crop management and decision-making in agriculture.
-      </p>
-    <p>
-      
-The project is centered on the use of supervised methods such as Logistic Regression and Multinomial Naive Bayes in coming up with a crop recommendation system. The models are trained on a dataset of soil and weather characteristics to estimate the most appropriate crops for a particular set of factors. Logistic Regression, being interpretable as well as simple, is well suited for binary classification problems, whereas Multinomial Naive Bayes is well suited to classify categorical variables and hence perfectly suited for agricultural data.
-Through a performance comparison of these two models, the project will identify the benefits and constraints of each for agricultural data analysis. Performance will be compared based on the use of confusion matrices as well as accuracy scores and other performance measures. Through this, we aim to contribute significantly to precision agriculture practice by helping growers improve productivity as well as sustainability through informed decision-making based on available data.
-    </p>
-<p>
-    <div class="image-container">
-      <img src="https://storage.googleapis.com/kaggle-datasets-images/1046158/1760012/9c08835b1e7e1084728b5202089fb65b/dataset-cover.jpg?t=2020-12-19-05-11-01" alt="">
+     <div class="image-container">
+      <img src="images\59.png" alt="">
     </div>
+    Github Code: <a href="https://github.com/larry6683/ML">https://github.com/larry6683/ML</a>
+
+    
+      <br>
+      Dataset source:<a href="https://data.mendeley.com/datasets/8v757rr4st/1"> https://data.mendeley.com/datasets/8v757rr4st/1</a></br>
+- Data pulled from the Elsevier's Mendeley unofficial API that is available online.
+    
+   
+      <p>
+        <h3>Abstract</h3>
+        Agriculture remains a central sector for mankind, supplying much-needed food, material, and nourishment to millions of individuals worldwide. 
+        The sector, however, is experiencing challenges like increasing population needs, climate change, resource degradation, and soil erosion. 
+        It is thus crucial to establish balance between increasing food production needs and sustainability. 
+        Traditional farming methods based largely on experience and local knowledge are now found to be insufficient to lead the complexities and dynamics of modern farm systems. 
+        Consequently, data-smart agriculture based on machine learning (ML) technologies has developed as a robust tool to assist agricultural decision-making.
+         Utilization of vast environmental, soil, and weather data will empower ML-based algorithms to forecast optimum crops suitable for individual zones, thereby facilitating precision agriculture as well as achieving optimal productivity.
+<br><br>
+The objective of this initiative is to develop an intelligent crop recommendation decision-making system using machine learning algorithms to enable agricultural stakeholders to make the most suitable selection of crops, considering soil profiles, weather patterns, and other environmental conditions. This approach is quite different from traditional methods, which are heavily based on heuristics or abstract rules, leveraging data science's ability to detect complex relationships and patterns in agricultural data. By analyzing soil pH, nutrient status, seasonal climate conditions, and rainfall, the system can deliver precise, localized crop guidance that fosters sustainable land use and enhances yield potential.
+<br><br>
+<h3>Modelling</h3>
+  The proposed methodology employs both unsupervised and supervised machine learning techniques to tackle various dimensions of crop recommendation. Unsupervised techniques such as K-means, hierarchical clustering, and DBSCAN divide similar weather and soil conditions. Furthermore, Dimensionality reduction through Principal Component Analysis (PCA) reduces dimensions to ease processing of high-dimensional datasets without compromising on important factors influencing crop yield. Association rule mining through the Apriori algorithm reveals hidden patterns and co-occurrences among environmental variables and crop results and offers insight into the data's underlying structure for effective decision-making.
+<br><br>
+Besides, supervised learning algorithms like Logistic Regression and Multinomial Naive Bayes are investigated by the research to predict and classify appropriate crops for a specified set of environmental factors. Logistic Regression is simplicity and ease of interpretation, whereas Multinomial Naive Bayes deals with categorical farm data efficiently. For increased precision and flexibility, advanced algorithms like Support Vector Machines (SVM) and ensemble algorithms are used. SVM is especially robust in resolving linear and nonlinear classification issues by finding the optimal decision boundaries, yielding precise crop prediction even when there are intricate relationships among datasets. Ensemble algorithms such as Random Forest and Gradient Boosting also increase the strength and generalization of the model by aggregating the prediction of every base learner to attain improved results.
+
+<br><br>
+The integration of advanced methodologies allows the system to process multivariate input data, enabling it to furnish actionable information concerning climatic variations, nutrient supplies, and crop yield effects due to soil texture. Experimental evidence indicates that recommendations based on machine learning are more precise, credible, and versatile than traditional methods of crop selection. This program aims to offer farmers and agricultural professionals evidence-based decision-support tools that might transform precision agriculture in support of sustainable and resilient food systems of production and defend them against global dangers. Overall, this research displays the interconnection between agronomy and machine learning in developing agricultural outputs. The potential to manage and process massive amounts of data not only helps farmers make educated choices regarding crop selection but also guarantees land and resource sustainable use. Higher precision, scale, and adaptability of the proposed crop selection system indicate a successful implementation of technology-driven solutions in agriculture, which promotes productivity as well as environmental sustainability.
+<br><br>
+      </p>
+<p>
+  <div class="image-container">
+    <img src="images\60.png" alt="">
+      <img src="images\61.png" alt="">
+    </div>
+    
 
 </p>
     <p>
@@ -147,18 +152,18 @@ Through a performance comparison of these two models, the project will identify 
   <div id="data-eda" class="tabcontent">
     <h3>Data Overview</h3>
     <p>
-      1. Data Collection<br>
+     <h3> 1. Data Collection</h3>
 The dataset was uploaded as a CSV file (cleaned_crop_data.csv). It contains the following features:<br>
 - Soil properties: Soilcolor, Ph, K, P, N, Zn, S.<br>
 - Environmental factors: QV2M-W, QV2M-Sp, QV2M-Su, QV2M-Au, T2M_MAX-W, T2M_MAX-Sp, T2M_MAX-Su, T2M_MAX-Au, T2M_MIN-W, T2M_MIN-Sp, T2M_MIN-Su, T2M_MIN-Au, PRECTOTCORR-W, PRECTOTCORR-Sp, PRECTOTCORR-Su, PRECTOTCORR-Au, WD10M, GWETTOP, CLOUD_AMT, WS2M_RANGE, PS.<br>
 - Target variable: label (crop type).<br>
 - Derived features: Ph_binned, N_P_interaction.<br>
 <br>
-2. Raw Data Overview<br>
-2.1. Displaying Raw Data<br>
+<h3>2. Raw Data Overview</h3>
+<h3>2.1. Displaying Raw Record of Data</h3>
 Below is a small portion of the raw data:<br>
-brown	5.4	231	4.0	0.1333	1.0	16.0	8.50	25.34	Barley
-    </p><br>
+brown |	5.4	| 231	| 4.0	| 0.1333	| 1.0	| 16.0	| 8.50	| 25.34	| Barley
+    </p>
     <h3>2.2. Data Preparation/EDA</h3>
     <p>
       Exploratory Data Analysis (EDA) Description for the Crop recommendation dataset is a critical step in understanding the structure, patterns, and relationships within the dataset.
@@ -247,7 +252,7 @@ brown	5.4	231	4.0	0.1333	1.0	16.0	8.50	25.34	Barley
     
 
 <p><b>
-According to the analysis or EDA I observed that the dataset is now clean and around 3000 records of dataset are perfectly processed.
+According to the EDA, I observed that the dataset is now clean and around 3000 records of dataset are perfectly processed.
 </b></p>
 
   </div>
@@ -265,7 +270,7 @@ According to the analysis or EDA I observed that the dataset is now clean and ar
     Key Idea: By focusing on the top few PCs (e.g., PC1 and PC2), you can simplify complex data while preserving its most important patterns.
     Variance Explained
     The scree plot visualizes the variance contributed by each PC. Typically, the first 2–3 components explain most of the variance, allowing you to discard less informative dimensions without significant information loss.
-    <br><b>How ARM is Used in the Project</b><br>
+    <br><br><b>How PCA is Used in the Project</b><br>
     We discuss how PCA is used in the project to reduce dimensionality, thus simplifying the dataset while retaining essential variation that informs crop prediction. The explanation highlights the significance of first few principal components and how PCA supports subsequent clustering and ARM by helping to visualize data in lower-dimensional spaces.   <br><br>Figure:Variance explained by each principal component. <br><img src="images\18.png" alt=""/><br><img src="images\21.jpg" alt=""/>
   </p>
   <p>
@@ -291,9 +296,9 @@ The most important principal components correspond to <b>soil nutrient content a
 
    Clustering and Distance Metrics Explained:
     Clustering is an unsupervised learning technique that groups data points into clusters based on similarity. The distance metric defines how similarity is quantified, playing a pivotal role in determining cluster quality.  
-<br><b>How ARM is Used in the Project</b><br>
+<br><br><b>How Clustering is Used in the Project</b><br>
     1. Clustering: Groups data points so that intra-cluster points are more similar than inter-cluster points. For example, customer segmentation groups buyers by behavior or demographics.  
-    <br>Figure: After Clustering Dataframe:<br><img src="images\27.png" alt=""><br>
+    <br>Figure: After Clustering Dataframe:<br><img src="images\27.png" alt=""><br><br>
     2. Distance Metrics:  <br>
       - **Euclidean Distance: Straight-line distance between two points, ideal for low-dimensional data:  <br>
       d = √[ (x2– x1)2 + (y2– y1)2]<br>
@@ -308,8 +313,8 @@ The most important principal components correspond to <b>soil nutrient content a
     <b>Data Preparation:<br></b>
     Before clustering, the dataset was cleaned and normalized. In Figure below you can see a snapshot of the raw data frame and in another figure the data after normalization and feature engineering. We discretized continuous variables where necessary and encoded categorical variables for compatibility with clustering algorithms.
     An accessible link to our clustering code is provided here: <a href="https://github.com/larry6683/ML/blob/main/Crop%20recommendation.ipynb">https://github.com/yourrepo/clustering_code.py</a>. Our implementation in Python uses libraries such as scikit-learn for K-means and DBSCAN, and SciPy for hierarchical clustering. We include comments throughout the code to explain the transformation steps and the rationale for selected hyperparameters.
-  <br><br>Figure: Before Clustering Dataframe:<br><img src="images\23.png" alt=""><br>
-  <br>Figure: After Clustering Dataframe:<br><img src="images\22.png" alt=""><br>
+  <br><br>Figure: Dataframe before clustering<br><img src="images\23.png" alt=""><br>
+  <br>Figure: Dataframe after clustering<br><img src="images\22.png" alt=""><br>
 </p>
   <p>
   <b>Results:<br></b>The clustering results are presented with multiple visualizations. We include a dendrogram image that shows the results of hierarchical clustering and additional cluster maps for different values of K. The results detail cluster compositions for K = 3, 4, and 5, and we evaluated these using the silhouette score—with the optimal K value being highlighted in the report. 
@@ -517,12 +522,270 @@ Image of the updated dataframe of two labels (Beans and Barley).<br>
 <!-- SVM -->
 <div id="svm" class="tabcontent">
   <h3>Supervised: Support Vector Machine</h3>
+  <h4>Overview</h4> 
+Support Vector Machines (SVMs) are a machine classification and regression learning algorithm that is supervised in nature. The primary task of SVMs is to find the optimal hyperplane that maximally separates data points of two classes in an N-dimensional space. The hyperplane is chosen based on maximizing the margin, i.e., the distance of the hyperplane from the nearest data points of either class, which is called support vectors. Through margin optimization, SVMs achieve improved generalization to novel data.
+<br><br>
+<b>Why SVMs are Linear Separators?</b><br>
+<br>SVMs are linear separators in the sense that they attempt to find a straight line (in 2D) or hyperplane (in more dimensions) which classifies the data into distinct classes. For linearly separable data, this hyperplane can be employed for complete separation of classes. However, for non-linearly separable data, SVMs use a kernel trick to project the data into higher dimensions where it can find a linear separator.
+<br><br>
+<b>The Role of Kernel and Dot Product</b>
+<br><br>
+The kernel function is a mathematically neat utility which finds the similarity between two points in the feature space after transformation but without the actual transformation taking place. Dot product is central to the kernel because it finds the similarity of two vectors, and this on which the entire kernel rests. For example, in the polynomial kernel, dot product is taken to a power such that non-linear relationships may be obtained.
+<br><br>
+<b>Example:</b>><br>
+Given 2D Point
+Let’s take a 2D point:
+x
+=
+(
+x
+1
+,
+x
+2
+)
+=
+(
+2
+,
+3
+)
+x=(x 
+1
+​
+ ,x 
+2
+​
+ )=(2,3)
+<br>Step 1: Expanded Polynomial Terms
+For
+d
+=
+2
+d=2
+, the polynomial kernel expands the input into:
+A constant term:
+1
+1
+<br>The original features:
+x
+1
+,
+x
+2
+x 
+1
+​
+ ,x 
+2
+​
+ 
+<br>The squared terms:
+x
+1
+2
+,
+x
+2
+2
+x 
+1
+2
+​
+ ,x 
+2
+2
+​
+ 
+<br>The interaction term:
+x
+1
+⋅
+x
+2
+x 
+1
+​
+ ⋅x 
+2
+​
+ <br>
+Step 2: Transformed Point
+Using the polynomial kernel with
+r
+=
+1
+r=1
+and
+d
+=
+2
+d=2
+:
+ϕ
+(
+x
+)
+=
+(
+1
+,
+x
+1
+,
+x
+2
+,
+x
+1
+2
+,
+x
+2
+2
+,
+x
+1
+⋅
+x
+2
+)
+ϕ(x)=(1,x 
+1
+​
+ ,x 
+2
+​
+ ,x 
+1
+2
+​
+ ,x 
+2
+2
+​
+ ,x 
+1
+​
+ ⋅x 
+2
+​
+ )
+<br>Substituting
+x
+1
+=
+2
+x 
+1
+​
+ =2
+and
+x
+2
+=
+3
+x 
+2
+​
+ =3
+:
+ϕ
+(
+x
+)
+=
+(
+1
+,
+2
+,
+3
+,
+2
+2
+,
+3
+2
+,
+2
+⋅
+3
+)
+ϕ(x)=(1,2,3,2 
+2
+ ,3 
+2
+ ,2⋅3)
+<br>Calculating the values:
+ϕ
+(
+x
+)
+=
+(
+1
+,
+2
+,
+3
+,
+4
+,
+9
+,
+6
+)
+ϕ(x)=(1,2,3,4,9,6)
+<br>Thus, the 2D point
+(
+2
+,
+3
+)
+(2,3)
+is transformed into the 6D point
+(
+1
+,
+2
+,
+3
+,
+4
+,
+9
+,
+6
+)
+(1,2,3,4,9,6)
+.
+<br><br>
+- Pictures explaining the SVM.<br><br>
+<img src="images\62.png" alt=""/>
+<img src="images\63.png" alt=""/>
   </div>
 
 
   <!-- Ensemble -->
 <div id="ensemble" class="tabcontent">
   <h3>Ensembles methods</h3>
+  </div>
+
+    <!-- Conclusions -->
+<div id="conclusion" class="tabcontent">
+  <h3>Conclusions</h3>
+  <p>
+    The process of developing a smart crop recommendation system based on machine learning demonstrates the game-changing contribution of data-centric technologies to modern farming. Adding climatic factors, soil types, and weather patterns, the research demonstrates how complex algorithms help farmers make improved choices. The technology simplifies agriculture, enhances efficiency, sustainability, and flexibility. Essentially, the system helps farmers select the most suitable crops for their respective environments, raising productivity while reducing resource wastage.
+<br><br>
+One of the key outcomes of this study is the in-depth grasp of soil-climate-crop performance relationships. Traditional farming relies on experience or past trends, which do not keep pace with rapid climate change and soil decline. Machine learning effectively uncovers subtleties in complex data and extracts underlying trends, such as the impact of soil pH, nutrient levels, and weather on crop success. This is valuable information for farmers to make informed, data-based decisions.
+<br><br>
+The flexibility of machine learning models to tackle agricultural issues is another significant conclusion. Various methodologies like clustering, association rule mining, and supervised learning algorithms were explored, each with their own advantages and disadvantages. This synergy provides an effective system that captures the complexities of real-world agriculture.
+<br><br>
+Moreover, agricultural sustainability takes precedence—suggesting crops well-suited to local circumstances can reduce overuse of resources and restrict use of poisonous fertilizers, and weather sensitivity encourages water conservation.
+<br><br>
+Ultimately, this research verifies machine learning's potential to revolutionize agriculture, and address the world's significant issues. It provides the positive vision of agriculture, where productivity and sustainability are not opposites, but complements, leading to prosperous farming communities.
+ <br> </p>
   </div>
 
   <!-- JavaScript to handle tab switching -->
