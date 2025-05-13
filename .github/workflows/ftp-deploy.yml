@@ -1,0 +1,27 @@
+name: 🚀 Deploy to IONOS FTP on push
+
+on:
+  push:
+    branches:
+      - main      # or your production branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Fetch your code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Sync to IONOS FTP
+      - name: Sync files to IONOS FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp            # use "ftps" if you need explicit TLS
+          port: 21                 # change if your FTPS port differs
+          local-dir: ./            # folder in your repo to upload
+          server-dir: ./public_html/  # target path on your VPS
