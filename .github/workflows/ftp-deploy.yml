@@ -24,4 +24,4 @@ jobs:
           protocol: ftp            # use "ftps" if you need explicit TLS
           port: 21                 # change if your FTPS port differs
           local-dir: ./            # folder in your repo to upload
-          server-dir: ./public_html/  # target path on your VPS
+          server-dir: ./httpdocs/  # target path on your VPS
